@@ -2,8 +2,8 @@
   <div>
     <div  class="download_bgimg1">
       <div class="clearfix pt5 container">
-        <div class="tc fl w30 rel">
-          <img src="/down_img/box.png" alt="图片加载中.." class="mt160 wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+        <div class="tc fl w30 rel wow fadeIn" data-wow-duration="6s">
+          <img src="/down_img/box.png" alt="图片加载中.." class="mt160">
           <img src="/down_img/star.png" alt="图片加载中.." class="abs animate-bounce-down">
         </div>
         <div class="tl white fr mr205 div1" @load="loading()">
@@ -19,11 +19,11 @@
     </div>
     <div class="download_bgimg2">
         <div class="clearfix container download_div1">
-          <div class="fl wow fadeInLeft">
+          <div class="fl wow fadeInLeft" data-wow-duration="2s" data-wow-delay="2s">
             <p><img src="/down_img/text2.png" alt="文字加载中.."></p>
             <p class="grey mt45 font24"><a href="javascript:">带你发现更大的游戏世界</a></p>
           </div>
-          <img src="/down_img/img8.png" alt="文字加载中.." class="fr wow fadeInRight">
+          <img src="/down_img/img8.png" alt="文字加载中.." class="fr wow fadeInRight" data-wow-duration="2s" data-wow-delay="2s">
         </div>
     </div>
     <div class="bgBlack tc">
@@ -168,7 +168,7 @@ export default {
     /*padding-top: 145px;*/
   }
   .mb116{
-    margin: 172px 0 67px 0;
+    margin: 160px 0 67px 0;
   }
   li a{
     color: #fff;
