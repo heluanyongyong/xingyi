@@ -1,3 +1,4 @@
 import Vue from 'vue'
 import {WOW} from 'wowjs'
-Vue.use(new WOW().init())
+new WOW().init();
+Vue.use(WOW)
