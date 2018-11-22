@@ -57,6 +57,7 @@ export default {
     }
   },
   mounted(){
+    this.$wowinit();
   },
   data () {
     return {
