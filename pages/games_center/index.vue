@@ -21,7 +21,7 @@
     			<div class="content_left">
     				<div class="content_left_top">
     					<div class="warp">
-    						<div class="title">热门标签</div>
+    						<div class="title wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">热门标签</div>
 		    				<ul class="listtitle">
 		    					<li><a href="javascript:void(0);" @click="change_listtitle(0)">棋牌</a></li>
 		    					<li><a href="javascript:void(0);" @click="change_listtitle(1)">篮球</a></li>
