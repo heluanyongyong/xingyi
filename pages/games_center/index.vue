@@ -171,10 +171,10 @@ export default{
 				margin-left -5px
 			.content_left_top
 				public_content_left()
+				border 1px solid rgb(238,238,238)
 				.warp
 					padding 30px 40px
 					.title
-						bold()
 						margin-bottom 20px
 						letter-spacing 2px
 					li
@@ -189,12 +189,12 @@ export default{
 							&:hover
 								color #FD8F24
 			.content_left_bottom
+				border 1px solid rgb(238,238,238)
 				/*若改变此处，需要改变右边边对应上边距*/
 				margin-top 43px
 				public_content_left()
 				.title
 					padding 20px 0 10px 15px
-					bold()
 					letter-spacing 6px
 				table
 					width 100%
@@ -252,8 +252,8 @@ export default{
 			.gametitle
 				a
 					margin-right 50px
-					color #010101
-					font-size 20px
+					color #333
+					font-size 18px
 					&.active
 						color #FD8F24
 					&:hover
@@ -266,6 +266,7 @@ export default{
 						/*若改变此处，需要改变左边对应上边距*/
 						margin-top 25px
 						.divcontent
+							border 1px solid rgb(238,238,238)
 							width 95%
 							margin 0 2.5%
 							background white
@@ -299,7 +300,7 @@ export default{
 								margin-top 6px
 								&.title
 									font-size 18px
-									bold()
+									color #333
 									margin 15px 0 10px 0
 									padding 0 20px
 								&.content
