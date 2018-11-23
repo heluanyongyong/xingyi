@@ -336,9 +336,24 @@ export default{
 	},
 	data(){
 		return{
-			modal_change: false,
 			// 放大图片及其初始值
-			dialog_imgSrc:'/games_list/favor1.png'
+			modal_change: false,
+			dialog_imgSrc:'/games_list/favor1.png',
+			// 自定义轮播器限制频率
+			click_flag:true,
+			// 轮播器配置
+    		swiperOption: {
+                spaceBetween: 30,
+                centeredSlides: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
+            }
 		}
 	},
 	methods:{
@@ -358,16 +373,32 @@ export default{
 			this.modal_change=true;
 		},
 		info4_img_prev(){
-			$('.info4_content').prepend($('.info4_content .info4_inner:last-child'));
+			if(this.click_flag){
+				$('.info4_content').prepend($('.info4_content .info4_inner:last-child'));
+				this.public_initClick(500);
+			}
 		},
 		info4_img_next(){
-			$('.info4_content').append($('.info4_content .info4_inner:first-child'));
+			if(this.click_flag){
+				$('.info4_content').append($('.info4_content .info4_inner:first-child'));
+				this.public_initClick(500);
+			}
 		},
 		bigimg_prev(){
-			$('.imgs_container .img').prepend($('.imgs_container .img img:last-child'));
+			if(this.click_flag){
+				$('.imgs_container .img').prepend($('.imgs_container .img img:last-child'));
+				this.public_initClick(800);
+			}
 		},
 		bigimg_next(){
-			$('.imgs_container .img').append($('.imgs_container .img img:first-child'));
+			if(this.click_flag){
+				$('.imgs_container .img').append($('.imgs_container .img img:first-child'));
+				this.public_initClick(900);
+			}
+		},
+		public_initClick(time){
+			this.click_flag=false;
+			setTimeout(()=>{this.click_flag=true},time);
 		}
 	}
 }

@@ -33,8 +33,7 @@
 .footer
 	background #111315
 	.container
-		container()
-		color rgba(243,243,243,1)
+		color #666
 		padding 20px 0
 		.foot_title
 			float left
@@ -46,11 +45,10 @@
 				width 200px
 				line-height 35px
 				a
-					color rgba(243,243,243,1)
+					color #666
 		public_bottom()
 			text-align center
 			font-size 14px
-			color #888
 			margin-top 5px
 		.nav_list
 			width 100%
@@ -59,7 +57,7 @@
 			li
 				display inline-block
 				a
-					color #888
+					color #666
 		.comment
 			public_bottom()
 </style>
