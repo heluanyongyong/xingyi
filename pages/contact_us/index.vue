@@ -14,8 +14,6 @@
 			<div class="info">
 				<p class="title">深圳星移网络科技有限公司</p>
 				<p>地址：深圳市龙岗坂田云里智能园3栋C4室</p>
-				<p>Tel：0755-82575906  </p>
-				<p>Fax：0755-82781032</p>
 				<p>业务QQ咨询：18922841928</p>
 				<p>电子邮箱：xingyi_sz@sina.com</p>
 			</div>
@@ -41,6 +39,7 @@
 			margin-top 20px
 			border 1px solid lightgray
 		.info
+			color #333
 			.title
 				font-size 24px
 				margin 30px 0 5px 0

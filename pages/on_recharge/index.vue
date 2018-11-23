@@ -228,34 +228,22 @@
 							<tr class="two">
 								<td>充值游戏：</td>
 								<td>						
-									<!-- <el-select v-model="value5" multiple placeholder="请选择">
+									<el-select v-model="value" placeholder="请选择">
 									    <el-option
 									      v-for="item in options"
+									      :key="item.value"
+									      :label="item.label"
+									      :value="item.value">
+									    </el-option>
+									</el-select>
+									<el-select v-model="value6" placeholder="请选择">
+									    <el-option
+									      v-for="item in serving"
 									      :key="item.value"
 									      :label="item.label"
 									      :value="item.value">
 									    </el-option>
 									  </el-select>
-									  <el-select
-									    v-model="value11"
-									    multiple
-									    collapse-tags
-									    style="margin-left: 20px;"
-									    placeholder="请选择">
-									    <el-option
-									      v-for="item in options"
-									      :key="item.value"
-									      :label="item.label"
-									      :value="item.value">
-									    </el-option>
-									  </el-select> -->
-									  <select>
-									  	  <option value="">泡泡堂</option>
-									  	  <option value="">跳跳堂</option>
-									  	  <option value="">欢乐麻将</option>
-									  	  <option value="">欢乐斗地主</option>
-									  	  <option value="">绝地求生</option>
-									  </select>
 								</td>
 							</tr>
 							<tr class="three">

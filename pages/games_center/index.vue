@@ -172,6 +172,9 @@ export default{
 			.content_left_top
 				public_content_left()
 				border 1px solid rgb(238,238,238)
+				transition all 0.5s
+				&:hover
+					box-shadow 0 0 5px lightgray
 				.warp
 					padding 30px 40px
 					.title
@@ -184,6 +187,7 @@ export default{
 						padding-left 20px
 						a
 							color #333333
+							transition all 0.25s
 							&.active
 								color #FD8F24
 							&:hover
@@ -193,6 +197,9 @@ export default{
 				/*若改变此处，需要改变右边边对应上边距*/
 				margin-top 43px
 				public_content_left()
+				transition all 0.5s
+				&:hover
+					box-shadow 0 0 5px lightgray
 				.title
 					padding 20px 0 10px 15px
 					letter-spacing 6px
@@ -227,6 +234,7 @@ export default{
 									color #FD8F24
 									cursor pointer
 							td
+								transition all 0.25s
 								font-size 12px
 							public_td()
 					tfoot
@@ -254,6 +262,7 @@ export default{
 					margin-right 50px
 					color #333
 					font-size 18px
+					transition all 0.25s
 					&.active
 						color #FD8F24
 					&:hover
@@ -270,6 +279,13 @@ export default{
 							width 95%
 							margin 0 2.5%
 							background white
+							border 1px solid transparent
+							transition all 0.5s
+							&:hover
+								border 1px solid #fd8f24
+								box-shadow 0 0 10px lightgray
+								p
+									color #fd8f24 !important
 							.imgdiv
 								line-height 0
 								position relative
@@ -303,10 +319,24 @@ export default{
 									color #333
 									margin 15px 0 10px 0
 									padding 0 20px
+									transition all 0.5s
 								&.content
 									font-size 13px
 									color #666
+									transition all 0.5s
 									&:last-child
 										padding-bottom 15px
+</style>
+<style lang="styl">
+/*轮播器默认样式*/
+/*点点*/
+.swiper-pagination-bullet-active
+	background #fd8f24
+/*左箭头*/
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next
+	background-image url('/games_list/left.png')
+/*又箭头*/
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev
+	background-image url('/games_list/right.png')
 </style>
 

@@ -2,16 +2,18 @@
 	<div class="main_div">
 		<logintop></logintop>
 		<nuxt class="loginmain" style="background:url('/login/banner.png');"/>
-		<footbar></footbar>
+		<footbar class="footer"></footbar>
 	</div>
 </template>
 
 <style scoped lang="stylus">
 @import '../assets/public.styl'
-.main_div
-	min-width 1250px
+/*.main_div
+	position fixed
+	width 100%
+	height 100%*/
 .loginmain
-	padding 60px 0
+	padding 110px 0
 	background-size 100% 100% !important
 </style>
 

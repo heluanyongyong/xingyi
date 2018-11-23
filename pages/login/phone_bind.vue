@@ -18,8 +18,6 @@
 @import '~assets/public.styl'
 input:hover
 	border 1px solid #FD8F24
-.out_big
-	padding 150px 0
 .phonebind_div
 	public_login_container()
 	.phonebind_top

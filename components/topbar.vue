@@ -36,13 +36,34 @@
 				<img class="navimg" src="/games_center/logo.png" alt="" @click="click_logo">
 				<div class="game_list">
 					<ul>
-						<li><nuxt-link to="/games_center">游戏中心</nuxt-link></li>
-						<li><nuxt-link to="/download_center">下载中心</nuxt-link></li>
-						<li><nuxt-link to="/on_recharge">在线充值</nuxt-link></li>
-						<li><nuxt-link to="/about_xingyi">关于星移</nuxt-link></li>
-						<li><nuxt-link to="/business_work">商务合作</nuxt-link></li>
-						<li><nuxt-link to="/contact_us">联系我们</nuxt-link></li>
-						<li><nuxt-link to="/join_us">加入星移</nuxt-link></li>
+						<li>
+							<div class="top"><nuxt-link @click.native="change_list(0)" to="/games_center">游戏中心</nuxt-link></div>
+							<div class="bottom"><nuxt-link @click.native="change_list(0)" to="/games_center">游戏中心</nuxt-link></div>
+						</li>
+						<li>
+							<div class="top"><nuxt-link @click.native="change_list(1)" to="/download_center">下载中心</nuxt-link></div>
+							<div class="bottom"><nuxt-link @click.native="change_list(1)" to="/download_center">下载中心</nuxt-link></div>
+						</li>
+						<li>
+							<div class="top"><nuxt-link @click.native="change_list(2)" to="/on_recharge">在线充值</nuxt-link></div>
+							<div class="bottom"><nuxt-link @click.native="change_list(2)" to="/on_recharge">在线充值</nuxt-link></div>
+						</li>
+						<li>
+							<div class="top"><nuxt-link @click.native="change_list(3)" to="/about_xingyi">关于星移</nuxt-link></div>
+							<div class="bottom"><nuxt-link @click.native="change_list(3)" to="/about_xingyi">关于星移</nuxt-link></div>
+						</li>
+						<li>
+							<div class="top"><nuxt-link @click.native="change_list(4)" to="/business_work">商务合作</nuxt-link></div>
+							<div class="bottom"><nuxt-link @click.native="change_list(4)" to="/business_work">商务合作</nuxt-link></div>
+						</li>
+						<li>
+							<div class="top"><nuxt-link @click.native="change_list(5)" to="/contact_us">联系我们</nuxt-link></div>
+							<div class="bottom"><nuxt-link @click.native="change_list(5)" to="/contact_us">联系我们</nuxt-link></div>
+						</li>
+						<li>
+							<div class="top"><nuxt-link @click.native="change_list()" to="/join_us">加入星移</nuxt-link></div>
+							<div class="bottom"><nuxt-link @click.native="change_list()" to="/join_us">加入星移</nuxt-link></div>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -113,7 +134,6 @@ top2_h=80px
 	border-top 1px solid #e1e1e1
 	.navimg
 		margin-top 12px
-		cursor pointer
 	.game_list
 		float right
 		height top2_h
@@ -122,11 +142,33 @@ top2_h=80px
 			height top2_h
 			float right
 			li
-				width 100px
-				float left
-				margin 0 15px
+				display inline-block
+				margin 0 30px
 				line-height top2_h
 				text-align right
+				position relative
+				width 72px
+				height 80px
+				overflow hidden
+				.top,.bottom
+					position absolute
+					transition all 0.5s
+					left 0
+					cursor default
+				.top
+					top 0
+				.bottom
+					top 100%
+					a
+						color #FD8F24
+				&.active
+					.top,.bottom
+						transition none
+				&:hover
+					.top
+						top -100%
+					.bottom
+						top 0
 				a
 					font-size 18px
 					color #888
@@ -142,6 +184,12 @@ top2_h=80px
 export default{
 	mounted(){
 		this.account=sessionStorage.getItem('account');
+		// 当前路由不触发样式
+		var routes=['games_center','download_center','on_recharge','about_xingyi','business_work','contact_us','join_us'];
+		routes.forEach((data,index)=>{
+			if(this.$route.path.indexOf(data)>0)
+				$('.game_list ul li').eq(index).addClass('active')
+		});
 	},
 	data(){
 		return{
@@ -161,6 +209,9 @@ export default{
 			sessionStorage.setItem('account',"");
 			this.$router.push('/download_center');
 			window.location.reload();
+		},
+		change_list(index){
+			$('.game_list ul li').eq(index).addClass('active').siblings().removeClass('active');
 		}
 	}
 }
