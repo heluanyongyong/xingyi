@@ -34,7 +34,7 @@
 										<p class="font24">实名认证</p>
 										<p class="font16 gray">根据国家有关规定，您在进入游戏时需要进行实名及防沉迷验证</p>
 									</li>
-									<li id="fristLi" @click="listChange(1)"><p>防沉迷规则</p></li>
+									<li id="fristLi" @click="listChange(1)">防沉迷规则</li>
 								</ul>
 								<ul class="clearfix">
 									<li><img src="/personal_img/phone.png"></li>
@@ -42,7 +42,7 @@
 										<p class="font24">安全手机</p>
 										<p class="font16 gray">手机是保护账号安全最重要的手段，请不要泄露您的手机号和手机验证码。</p>
 									</li>
-									<li><p @click="show=!show">设置</p></li>
+									<li @click="show=!show">设置</li>
 								</ul>
 								<ul class="clearfix">
 									<li><img src="/personal_img/sub.png"></li>
@@ -50,7 +50,7 @@
 										<p class="font24">密码设置</p>
 										<p class="font16 gray">密码设置 修改原密码，找回密码等功能在此。</p>
 									</li>
-									<li><p @click="listChange(2)">设置</p></li>
+									<li @click="listChange(2)">设置</li>
 								</ul>
 							</div>
 						</div>
@@ -75,7 +75,7 @@
 										<p class="font24">实名认证</p>
 										<p class="font16 gray">根据国家有关规定，您在进入游戏时需要进行实名及防沉迷验证</p>
 									</li>
-									<li><p @click="isShow=!isShow">设置</p></li>
+									<li @click="isShow=!isShow">设置</li>
 								</ul>
 								<ul class="clearfix">
 									<li><img src="/personal_img/phone.png"></li>
@@ -83,7 +83,7 @@
 										<p class="font24">安全手机</p>
 										<p class="font16 gray">手机是保护账号安全最重要的手段，请不要泄露您的手机号和手机验证码。</p>
 									</li>
-									<li><p @click="show=!show">设置</p></li>
+									<li @click="show=!show">设置</li>
 								</ul>
 								<ul class="clearfix">
 									<li><img src="/personal_img/sub.png"></li>
@@ -91,7 +91,7 @@
 										<p class="font24">密码设置</p>
 										<p class="font16 gray">密码设置 修改原密码，找回密码等功能在此。</p>
 									</li>
-									<li><p @click="listChange(2)">设置</p></li>
+									<li @click="listChange(2)">设置</li>
 								</ul>
 							</div>
 						</div>
@@ -126,9 +126,10 @@
 					<li class="tc list2 none">
 						<p class="font36 black mb49">星移盒子</p>
 						<form class="tr w462" method="post">
-							<p><span>原密码</span><input type="text" name=""></p>
-							<p><span>新密码</span><input type="text" name=""></p>
-							<p><span>确认密码</span><input type="text" name=""></p>
+							<p><span>原密码</span><input type="text" name=""  placeholder="请输入原密码"></p>
+							<p><span>新密码</span><input type="text" name="" placeholder="8-16位数字或者是字母加数字"></p>
+							<p><span>确认密码</span><input type="text" name="" placeholder="请与新密码保持一致"></p>
+							<p class="caution"></p>
 							<p class="mt45"><input type="submit" name="" value="确认" class="bgOrange white"></p>
 						</form>
 					</li>
@@ -200,6 +201,13 @@ export default {
 </script>
 
 <style scoped>
+span{
+	cursor: pointer;
+}
+.caution{
+	color: red;
+	font-size: 16px;
+}
 /*模态框*/
 .modal_box input{
 	padding-left: 10px;
@@ -266,7 +274,7 @@ input,button{
 	border: 1px solid #D6D6D6;
 }
 p{
-	margin-bottom: 17px;
+   margin-bottom: 17px;
 }
 .w462{
 	width: 510px;

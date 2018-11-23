@@ -2,7 +2,7 @@
   <div>
     <div  class="download_bgimg1">
       <div class="clearfix pt5 container">
-        <div class="tc fl w30 rel wow fadeIn" data-wow-duration="6s">
+        <div class="tc fl rel wow fadeIn" data-wow-duration="6s">
           <img src="/down_img/box.png" alt="图片加载中.." class="mt160">
           <img src="/down_img/star.png" alt="图片加载中.." class="abs animate-bounce-down">
         </div>
@@ -19,11 +19,11 @@
     </div>
     <div class="download_bgimg2">
         <div class="clearfix container download_div1">
-          <div class="fl wow fadeInLeft" data-wow-duration="2s" data-wow-delay="2s">
+          <div class="fl wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.5s">
             <p><img src="/down_img/text2.png" alt="文字加载中.."></p>
-            <p class="grey mt45 font24"><a href="javascript:">带你发现更大的游戏世界</a></p>
+            <p class="grey mt45 font24">带你发现更大的游戏世界</p>
           </div>
-          <img src="/down_img/img8.png" alt="文字加载中.." class="fr wow fadeInRight" data-wow-duration="2s" data-wow-delay="2s">
+          <img src="/down_img/img8.png" alt="文字加载中.." class="fr wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.5s">
         </div>
     </div>
     <div class="bgBlack tc">
@@ -85,12 +85,13 @@ export default {
   }
   .download_bgimg1{
     width: 100%;
-    height: 620px;
-    background: url(../../static/down_img/download_bgimg.png) no-repeat center center;
+    height: 100%;
+    background: url(/down_img/banner.png);
   }
   .download_bgimg2{
     width: 100%;
-    background: url(../../static/down_img/download_bgimg2.png) no-repeat center center;
+    height: 100%;
+    background: url(/down_img/download_bgimg2.png);
   }
   .borR20{
     border-radius:35px;
@@ -106,8 +107,8 @@ export default {
   }
   .abs{
     position: absolute;
-    top: 6%;
-    right: 8%;
+    top: 112px;
+    right: 28px;
   }
   /*上下移动动画*/
   @-webkit-keyframes bounce-down {
@@ -169,7 +170,7 @@ export default {
     /*padding-top: 145px;*/
   }
   .mb116{
-    margin: 160px 0 67px 0;
+    margin: 242px 0 67px 0;
   }
   li a{
     color: #fff;
@@ -199,7 +200,7 @@ export default {
     padding: 155px 0;
   }
   .mt160{
-    margin: 160px 0 60px 0;
+    margin: 252px 0 189px 0;
   }
 }
 </style>

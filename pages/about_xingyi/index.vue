@@ -1,6 +1,6 @@
 <template>
 	<div id="app" class="bgColor">
-		<div class="height"><img src="/about_img/header.png" alt="图片加载中..." class="w100"></div>
+		<div class="height"><img src="/about_img/about.png" alt="图片加载中..." class="w100"></div>
 	  <!-- <ul class="mg15 ul bgWhite clearfix">
 	  	<li><nuxt-link to="/about_xingyi/synopsis" tag="span">公司简介</nuxt-link></li>
 	  	<li><nuxt-link to="/about_xingyi/prog" tag="span">发展历程</nuxt-link></li>
@@ -109,7 +109,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
 .height{
-	height: 610px;
+	line-height: 0;
 }
 #font36{
 	font-size: 36px;
