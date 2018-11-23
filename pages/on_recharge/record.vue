@@ -134,6 +134,7 @@
 				<el-pagination
 				  background
 				  layout="prev, pager, next"
+				  :page-size="20"
 				  :total="100">
 				</el-pagination>
 			</div>
