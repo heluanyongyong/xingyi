@@ -43,7 +43,7 @@ export default {
       },
       mywindow: {
         position: [114.06798073351291, 22.63000532679801],
-        content: '<h4>深圳星移网络科技有限公司</h4><div class="text item">地址：深圳市龙岗坂田云里智能园3栋C4室</div>',
+        content: '<h4>深圳星移网络科技有限公司</h4><div class="text item" style="font-size:14px">地址：深圳市龙岗坂田云里智能园3栋C4室</div>',
         visible: true,
         events: {
           close () {

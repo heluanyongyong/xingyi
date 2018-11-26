@@ -38,7 +38,7 @@
 		.foot_title
 			float left
 		.foot_list
-			font-size 15px
+			font-size 13px
 			margin-left 160px
 			li
 				float left
@@ -48,7 +48,7 @@
 					color #666
 		public_bottom()
 			text-align center
-			font-size 14px
+			font-size 13px
 			margin-top 5px
 		.nav_list
 			width 100%

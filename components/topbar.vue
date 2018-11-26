@@ -61,8 +61,8 @@
 							<div class="bottom"><nuxt-link @click.native="change_list(5)" to="/contact_us">联系我们</nuxt-link></div>
 						</li>
 						<li>
-							<div class="top"><nuxt-link @click.native="change_list()" to="/join_us">加入星移</nuxt-link></div>
-							<div class="bottom"><nuxt-link @click.native="change_list()" to="/join_us">加入星移</nuxt-link></div>
+							<div class="top"><nuxt-link @click.native="change_list(6)" to="/join_us">加入星移</nuxt-link></div>
+							<div class="bottom"><nuxt-link @click.native="change_list(6)" to="/join_us">加入星移</nuxt-link></div>
 						</li>
 					</ul>
 				</div>
@@ -79,7 +79,7 @@ fixed_top()
 	position fixed
 	z-index 555
 public_placehoder()
-top1_h=50px
+top1_h=32px
 .top1
 	fixed_top()
 	font-size 15px
@@ -89,6 +89,7 @@ top1_h=50px
 	.top1_left
 		line-height top1_h
 		float left
+		font-size 13px
 	.top1_right
 		float right
 		height top1_h
@@ -99,6 +100,7 @@ top1_h=50px
 			line-height top1_h
 			a
 				color #777
+				font-size 12px
 				&:hover
 					color #FD8F24
 			img,a,span
@@ -113,27 +115,30 @@ top1_h=50px
 				input
 					box-sizing content-box
 					font-size 12px
-					width 100px
-					height 30px
+					width 80px
+					height 22px
 					border-radius 10px
 					padding 0 40px 0 20px
 				.inner_img
 					width 10px
 					position absolute
-					right 15px
+					right 32px
 					top 50%
 					transform translateY(-50%)
 					cursor pointer
 ._top1
 	height top1_h
-top2_h=80px
+top2_h=60px
 .top2
+	overflow hidden
 	fixed_top()
 	height top2_h
 	background rgba(255,255,255,1)
 	border-top 1px solid #e1e1e1
 	.navimg
-		margin-top 12px
+		margin-top 10px
+		margin-left 6px
+		width 110px
 	.game_list
 		float right
 		height top2_h
@@ -170,13 +175,13 @@ top2_h=80px
 					.bottom
 						top 0
 				a
-					font-size 18px
+					font-size 15px
 					color #888
 					/*路由颜色*/
 					&.nuxt-link-active
 						color #FD8F24
 						border-bottom 5px solid #FD8F24
-						padding-bottom 25px
+						padding-bottom 18px
 ._top2
 	height top2_h
 </style>

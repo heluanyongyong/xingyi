@@ -17,6 +17,7 @@
 <style scoped lang="styl">
 @import '~assets/public.styl'
 .top
+	font-size 16px
 	a
 		margin-left 5px
 .div_content
@@ -24,19 +25,21 @@
 	background #fff
 	min-height 600px
 	padding 40px
+	color #333
 	.time
 		text-align right
 		color #666
 		font-size 15px
 	p.title
-		font-size 24px
+		font-size 18px
 		margin-top 25px
 		margin-bottom 20px
 		text-align center
 	p.info
+		font-size 15px
 		text-align left
 		text-indent 2rem
-		margin-top 15px
+		margin-top 10px
 </style>
 <script>
 export default{

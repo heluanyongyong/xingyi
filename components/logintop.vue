@@ -14,24 +14,27 @@
 @import '../assets/public.styl'
 .loginheader
 	container()
-	padding 12px 0
-	height 80px
+	height 60px
 	overflow hidden
 	ul
 		width 100%
 		height 100%
+		float left
 		li
 			float left
 			margin-right 25px
 			/*若宽度发生改变、行高也应发生相应改变*/
-			line-height 56px
+			line-height 60px
 			font-size 22px
+			vertical-align middle
 			&.line
 				height 100%
 				width 1px
 				background rgba(238,238,238,1)
 			img
 				cursor pointer
+				width 110px
+				vertical-align middle
 </style>
 <script>
 export default{

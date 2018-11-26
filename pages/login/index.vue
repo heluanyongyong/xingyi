@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="loginmain">
     	<div class="container">
     		<div class="login_div">
     			<ul class="login_top">

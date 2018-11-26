@@ -22,6 +22,7 @@
 							<img src="/games_list/erweima.png" alt="">
 						</div>
 					</div>
+					<div class="clear"></div>
 				</div>
 				<div class="game_list">
 					<ul>
@@ -163,40 +164,45 @@
 		overflow hidden
 		.top
 			margin-top 60px
-			height 210px
+			padding 30px 33px
 			background #fff
 			.top_content
-				padding 30px 35px
 				div
 					float left
 					&.top1_left
-						width 150px
+						line-height 0
+						width 130px
 						img
 							width 100%
 					&.top1_center
-						margin 10px 25px
+						margin 10px 29px
 						.title
 							bold()
 							color #FD8F24
-							font-size 25px
+							font-size 20px
+							margin-top 10px
 						ul
-							margin-top 20px
+							margin-top 7px
 							float left
 							width 200px
 							li
-								line-height 40px
+								line-height 30px
+								font-size 14px
 								span
 									color #fd8f24
 					&.top1_right
+						line-height 0
 						float right
-						width 150px
+						width 130px
 						img
 							width 100%
 		.game_list
 			height 50px
 			background #f3f3f3
-			font-size 18px
+			font-size 15px
 			ul
+				float left
+				margin-left 1px
 				li
 					float left
 					width 160px
@@ -210,8 +216,9 @@
 							color #FD8F24
 		.game_content
 			background #fff
+			font-size 14px
 			.info
-				padding 35px 35px
+				padding 28px 35px
 				display none
 			.active
 				display block
@@ -236,7 +243,6 @@
 							transform rotate(45deg)
 							margin-right 5px
 						span
-							font-size 15px
 							&:last-child
 								float right
 			.info4
@@ -281,8 +287,10 @@
 		.bottom
 			margin-top 25px
 			background #fff
-			padding 30px 30px
+			padding 30px
 			ol
+				float left
+				margin-left 1px
 				li
 					float left
 					width 120px
@@ -290,13 +298,13 @@
 						margin-left 5px
 					a
 						color #000
-						font-size 18px
+						font-size 15px
 						&.active
 							color #FD8F24
 			.imgs_content
 				width 100%
 				height 145px
-				margin-top 20px
+				margin-top 15px
 				overflow hidden
 				ul
 					width 100%

@@ -13,7 +13,7 @@
 		</div> -->
 		<div class="bottom">
 			<div class="container">
-				<h2 class="title">商务合作</h2>
+				<p class="title">商务合作</p>
 				<div class="left">
 					<p class="p1">星移信息</p>
 					<p>全球授权（客户端/页游端/手游端）</p>
@@ -57,7 +57,6 @@
 @import '~assets/public.styl'
 .title
 	font-size 28px
-	bold()
 	letter-spacing 1px
 	margin-bottom 40px
 .top
@@ -75,12 +74,15 @@
 			img
 				width 100%
 .bottom
+	p.title
+		font-size 20px
 	background #fff
 	.container
+		font-size 14px
 		text-align center
-		padding 40px 0 80px 0
+		padding 40px 0 60px 0
 		.p1
-			font-size 24px
+			font-size 16px
 			margin-bottom 15px
 		.left
 			float left
@@ -125,7 +127,7 @@
 					border 1px solid rgb(217,217,217)
 					width 175px
 					height 50px
-					font-size 18px
+					font-size 16px
 					&:hover
 						background #FD8F24
 						color #fff

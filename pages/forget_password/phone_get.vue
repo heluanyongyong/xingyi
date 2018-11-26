@@ -21,9 +21,13 @@
 	padding 150px 400px 200px 400px
 	text-align center
 	.title
-		font-size 28px
+		font-size 20px
+		font-weight bold
 	.center
 		margin 30px 0 15px 0
+	.bottom
+		.button_active
+			font-size 16px
 </style>
 <script>
 export default{

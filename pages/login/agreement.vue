@@ -262,6 +262,7 @@
 <style scoped lang="styl">
 @import '~assets/public.styl'
 .container
+	color #333
 	.title1
 		font-size 26px
 	hr

@@ -162,7 +162,7 @@ export default{
 		container()
 		.content_left
 			float left
-			width 25%
+			width 20%
 			public_content_left()
 				width 92%
 				background white
@@ -176,8 +176,9 @@ export default{
 				&:hover
 					box-shadow 0 0 5px lightgray
 				.warp
-					padding 30px 40px
+					padding 25px 40px
 					.title
+						font-size 16px
 						margin-bottom 20px
 						letter-spacing 2px
 					li
@@ -188,6 +189,8 @@ export default{
 						a
 							color #333333
 							transition all 0.25s
+							font-size 15px
+							color #999
 							&.active
 								color #FD8F24
 							&:hover
@@ -195,12 +198,13 @@ export default{
 			.content_left_bottom
 				border 1px solid rgb(238,238,238)
 				/*若改变此处，需要改变右边边对应上边距*/
-				margin-top 43px
+				margin-top 30px
 				public_content_left()
 				transition all 0.5s
 				&:hover
 					box-shadow 0 0 5px lightgray
 				.title
+					font-size 16px
 					padding 20px 0 10px 15px
 					letter-spacing 6px
 				table
@@ -216,15 +220,14 @@ export default{
 							padding pd 0
 					public_td()
 						td:first-child
-							padding-left 5px
+							padding-left 10px
 						td:last-child
-							padding-right 5px
+							padding-right 10px
 					thead
 						tr
 							public_tr(#333,16px,#efefef,15px)
 							td
-								bold()
-								font-size 15px
+								font-size 14px
 							public_td()
 					tbody
 						tr
@@ -256,12 +259,13 @@ export default{
 
 		.content_right
 			float right
-			width 75%
+			width 80%
 			.gametitle
+				margin-left 12px
 				a
 					margin-right 50px
 					color #333
-					font-size 18px
+					font-size 15px
 					transition all 0.25s
 					&.active
 						color #FD8F24
@@ -269,6 +273,8 @@ export default{
 						color #FD8F24
 			.gamecontent
 				ul
+					float left
+					margin-top -10px
 					li
 						float left
 						width 20%
@@ -276,10 +282,9 @@ export default{
 						margin-top 25px
 						.divcontent
 							border 1px solid rgb(238,238,238)
-							width 95%
-							margin 0 2.5%
+							width 90%
+							margin 0 auto
 							background white
-							border 1px solid transparent
 							transition all 0.5s
 							&:hover
 								border 1px solid #fd8f24
@@ -309,19 +314,20 @@ export default{
 										a
 											transition all 0.5s
 											color #fff
+											font-size 15px
 											&:hover
 												color #FD8F24
 							p
 								text-align center
 								margin-top 6px
 								&.title
-									font-size 18px
+									font-size 15px
 									color #333
 									margin 15px 0 10px 0
 									padding 0 20px
 									transition all 0.5s
 								&.content
-									font-size 13px
+									font-size 12px
 									color #666
 									transition all 0.5s
 									&:last-child

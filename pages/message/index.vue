@@ -58,15 +58,16 @@
 .container
 	background #fff
 	padding 40px
+	font-size 14px
 	.title
-		font-size 24px
+		font-size 20px
 	.top
 		margin-top 20px
 		border-bottom 1px solid rgb(189,189,189)
 		padding-bottom 15px
 		.top_left
 			float left
-			font-size 18px
+			font-size 16px
 			div
 				position relative
 				margin-right 50px
@@ -77,7 +78,7 @@
 				.pos
 					display none
 					position absolute
-					bottom -16px
+					bottom -17px
 					left 0
 					width 100%
 					height 3px
@@ -123,16 +124,18 @@
 				border-bottom 1px solid rgb(221,221,221)
 				padding  15px
 				color #999
+				vertical-align middle
 				img,input,span
 					vertical-align middle
 				.checkbox
-					width 20px
-					height 20px
+					width 18px
+					height 18px
 					cursor pointer
+					vertical-align bottom
 				img
 					margin-left 15px
 					cursor pointer
-					width 26px
+					width 22px
 				.type
 					cursor pointer
 					margin-left 10px
