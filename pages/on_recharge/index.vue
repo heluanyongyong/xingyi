@@ -50,7 +50,7 @@
 									      :label="item.label"
 									      :value="item.value">
 									    </el-option>
-									  </el-select>
+									</el-select>
 								</td>
 							</tr>
 							<tr class="three">
