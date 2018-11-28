@@ -252,6 +252,8 @@
 					position absolute
 					top 50%
 					transform translateY(-50%)
+					img
+						cursor pointer
 				.pos_left
 					left 0
 				.pos_right
