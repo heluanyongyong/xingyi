@@ -17,7 +17,7 @@
 					   <div class="arrow-down"></div>
 					</li>
 				</ul>
-				<div class="fr font18"><nuxt-link to="/on_recharge/record" tag="a">
+				<div class="fr font16"><nuxt-link to="/on_recharge/record" tag="a">
 					充值记录>>
 				</nuxt-link></div>
 			</div>
@@ -54,7 +54,10 @@
 								</td>
 							</tr>
 							<tr class="three">
-								<td>选择金额：</td>
+								<td>
+									<div>选择金额：</div>
+                                    <div>(单位/元)</div>
+								</td>
 								<td>
 									<p>
 										<span @click="chooseMoney(0)">10</span>
@@ -266,7 +269,7 @@
 										<span @click="chooseMoney(41)">2000</span>
 									</p>
 									<p class="other">
-										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textThree" @click="inputText()" @keyup="textThree()">
+										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textThree" placeholder="请输入整数值" @click="inputText()" @keyup="textThree()">
 									</p>
 								</td>
 							</tr>
@@ -466,7 +469,39 @@ export default {
 }
 </script>
 
+
+
+
+<style>
+.el-input__inner{
+		color: #333;
+	}
+.el-input__inner::-webkit-input-placeholder{
+	color: #333;
+}
+.el-input__inner:-moz-placeholder{
+	color: #333;
+}
+.el-input__inner::-moz-placeholder{
+	color: #333;
+}
+.el-input__inner:-ms-input-placeholder{
+	color: #333;
+}
+</style>
 <style scoped>
+input::-webkit-input-placeholder{
+	color: #666;
+}
+input:-moz-placeholder{
+	color: #666;
+}
+input::-moz-placeholder{
+	color: #666;
+}
+input:-ms-input-placeholder{
+	color: #666;
+}
 select{
 	width: 275px;
 	height: 55px;
@@ -546,7 +581,7 @@ a:hover{
      width: 260px;
      height: 82px;
      line-height: 82px;
-     font-size: 26px;
+     font-size: 22px;
      color: #999;
      border-left: 1px solid white;
      position: relative; 
@@ -700,10 +735,4 @@ table .bg_yes{
 	color: white;
 	margin-top: 85px;
 }
-
-
-/*.tabTit button:hover{
-	background: url(/recharge_img/yes.png) no-repeat right -1px top;
- 	border: 1px solid #FD8F24;
-}*/
 </style>

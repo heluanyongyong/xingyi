@@ -19,7 +19,7 @@
     </div>
     <div class="download_bgimg2">
         <div class="clearfix container download_div1">
-          <div class="fl wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.5s">
+          <div class="fl wow fadeInLeft mt156" data-wow-duration="0.5s" data-wow-delay="0.5s">
             <p><img src="/down_img/text2.png" alt="文字加载中.."></p>
             <p class="grey mt45 font24">带你发现更大的游戏世界</p>
           </div>
@@ -66,10 +66,8 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="styl">
-/*@import '~assets/animate.styl'*/
+
 @css{
   .app_abs{
     position: absolute;
@@ -201,6 +199,9 @@ export default {
   }
   .mt160{
     margin: 252px 0 189px 0;
+  }
+  .mt156{
+    margin-top: 156px;
   }
 }
 </style>
