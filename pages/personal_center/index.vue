@@ -125,11 +125,11 @@
 					<!-- 修改密码 -->
 					<li class="tc list2 none">
 						<p class="font36 black mb49">星移盒子</p>
-						<form class="tr w462" method="post">
-							<p><span>原密码</span><input type="text" name=""  placeholder="请输入原密码"></p>
-							<p><span>新密码</span><input type="text" name="" placeholder="8-16位数字或者是字母加数字"></p>
-							<p><span>确认密码</span><input type="text" name="" placeholder="请与新密码保持一致"></p>
-							<p class="caution"></p>
+						<form class="tr w462" method="post" name="myform" v-on:submit.prevent="onSubmit">
+							<p><span>原密码</span><input type="password" name="primitive"  placeholder="请输入原密码"></p>
+							<p><span>新密码</span><input type="password" name="password" placeholder="8-16位数字或者是字母加数字"></p>
+							<p><span>确认密码</span><input type="password" name="notarize" placeholder="请与新密码保持一致"></p>
+							<p id="caution"></p>
 							<p class="mt45"><input type="submit" name="" value="确认" class="bgOrange white"></p>
 						</form>
 					</li>
@@ -162,7 +162,7 @@
 			<div class="modal_box tl">
 				<p class="font24 grey">安全手机设置</p>
 				<p><input type="text" name="" placeholder="新的手机号码"></p>
-				<p><input type="text" name="" placeholder="验证码" id="num"><input type="button" name="" value="获取验证码" id="but"></p>
+				<p><input type="text" name="" placeholder="验证码" id="numb"><input type="button" name="" value="获取验证码" id="but"></p>
 				<p><button class="active1" @click="fShow=!fShow">确定</button></p>
 			</div>
 		</div>
@@ -195,6 +195,27 @@ export default {
 		ifshow(){
            this.show=false
            this.fShow=true
+		},
+		onSubmit(){
+			var myform=document.myform;
+			var primi=myform.primitive
+			var password=myform.password;
+			var notarize=myform.notarize;
+			var error=document.getElementById("caution")
+			var pswReg=/^[a-zA-Z0-9]{8,16}$/;
+            if (!pswReg.test(password.value)) {
+				error.innerHTML="密码请输入8-16位数字或者是字母加数字";
+				return false;
+			}
+			else if (notarize.value!==password.value) {
+		   	    error.innerText="确认密码与新密码不一致";
+		   	    return false
+			}else{
+                primi.value=""
+                password.value=""
+                notarize.value=""
+                error.style.display="none"
+			}
 		}
     }
 }
@@ -204,9 +225,10 @@ export default {
 span{
 	cursor: pointer;
 }
-.caution{
+#caution{
 	color: red;
 	font-size: 16px;
+	text-align: center;
 }
 /*模态框*/
 .modal_box input{
@@ -215,7 +237,7 @@ span{
 .modal_box p:nth-child(3){
 	margin: 17px 0 31px 0;
 }
-#num{
+#numb{
    width: 255px;
 }
 #but{
@@ -272,6 +294,7 @@ input,button{
 	height: 50px;
 	line-height: 50px;
 	border: 1px solid #D6D6D6;
+	outline: none;
 }
 p{
    margin-bottom: 17px;
