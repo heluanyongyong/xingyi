@@ -3,7 +3,7 @@
    <div><img src="/about_img/join.png" class="w100"></div>
    <div class="container ptb3">
      <h1>加入我们</h1>
-     <table class="container tc font20">
+     <!-- <table class="container tc font20">
        <thead>
          <tr class="bgGrey">
            <th>职位类型</th>
@@ -14,14 +14,14 @@
          </tr>
        </thead>
        <tbody class="tdColor">
-         <tr>
+         <tr @click="show(0)">
            <td>销售/客服/技术支持</td>
            <td>深圳 龙岗区</td>
            <td>2018-11-09</td>
            <td>2018-12-09</td>
            <td><img src="/about_img/down.png"></td>
          </tr>
-         <tr>
+         <tr @click="show(1)">
            <td>Java</td>
            <td>深圳 龙岗区</td>
            <td>2018-11-09</td>
@@ -36,11 +36,25 @@
            <td><img src="/about_img/down.png"></td>
          </tr>
        </tbody>
-     </table>
-     <div class="conter_box">
-         <!-- 销售/客服/技术支持职位详情 -->
+     </table> -->
+     <div class="header_span container">
+       <span>职位类型</span>
+       <span>工作地点</span>
+       <span>发布时间</span>
+       <span>有效日期</span>
+       <span>查看详情</span>
+     </div>
+     <ul class="conter_ul container">
+       <li @click="show(0)">
+          <div class="join_head">
+           <span>销售/客服/技术支持</span>
+           <span>深圳 龙岗区</span>
+           <span>2018-11-09</span>
+           <span>2018-12-09</span>
+           <span><img src="/about_img/down.png"></span>
+         </div>
+         <!-- 岗位职责 -->
          <div class="join_box">
-           <!-- 岗位职责 -->
            <p>岗位职责:</p>
            <ol>
              <li>销售，商务渠道，区域销售，软件销售，销售顾问，市场拓展1.通过电话和网络的形式开发客户，面谈为主；</li>
@@ -66,13 +80,22 @@
            <!-- 联系方式 -->
            <p>联系方式:</p>
            <dl>
-             <dd>联 系 人：<span>陈小姐</span></dd>
-             <dd>招聘专线：<span>18922841928</span></dd>
-             <dd>简历邮箱：<span>xingyi_sz@sina.com</span></dd>
-             <dd>公司地址：<span>深圳市龙岗区坂田街道云里智能园3栋c4—c5室</span></dd>
+             <dd>联 系 人：<em>陈小姐</em></dd>
+             <dd>招聘专线：<em>18922841928</em></dd>
+             <dd>简历邮箱：<em>xingyi_sz@sina.com</em></dd>
+             <dd>公司地址：<em>深圳市龙岗区坂田街道云里智能园3栋c4—c5室</em></dd>
            </dl>
          </div>
-         <!-- Java职位详情 -->
+       </li>
+       <li @click="show(1)">
+         <div class="join_head">
+           <span>Java</span>
+           <span>深圳 龙岗区</span>
+           <span>2018-11-09</span>
+           <span>2018-12-09</span>
+           <span><img src="/about_img/down.png"></span>
+         </div>
+          <!-- Java职位详情 -->
          <div class="join_box">
            <!-- 岗位职责 -->
            <p>岗位职责:</p>
@@ -95,26 +118,23 @@
            <!-- 联系方式 -->
            <p>联系方式:</p>
            <dl>
-             <dd>联 系 人：<span>陈小姐</span></dd>
-             <dd>招聘专线：<span>18922841928</span></dd>
-             <dd>简历邮箱：<span>xingyi_sz@sina.com</span></dd>
-             <dd>公司地址：<span>深圳市龙岗区坂田街道云里智能园3栋c4—c5室</span></dd>
+             <dd>联 系 人：<em>陈小姐</em></dd>
+             <dd>招聘专线：<em>18922841928</em></dd>
+             <dd>简历邮箱：<em>xingyi_sz@sina.com</em></dd>
+             <dd>公司地址：<em>深圳市龙岗区坂田街道云里智能园3栋c4—c5室</em></dd>
            </dl>
+         </div>
+       </li>
+       <li @click="show(2)">
+         <div class="join_head">
+           <span>PHP</span>
+           <span>深圳 龙岗区</span>
+           <span>2018-11-09</span>
+           <span>2018-12-09</span>
+           <span><img src="/about_img/down.png"></span>
          </div>
          <!-- PHP职位详情 -->
          <div class="join_box">
-           <!-- <ul class="clearfix">
-             <li>职位类别：<span>PHP</span></li>
-             <li>最低学历：<span>本科</span></li>
-             <li>职位月薪：<span>12000-15000元/月</span></li>
-             <li>&nbsp;</li>
-           </ul>
-           <ul class="clearfix">
-             <li>工作经验：<span>不限</span></li>
-             <li>工作性质：<span>全职</span></li>
-             <li>工作地点：<span>深圳</span></li>
-             <li>招聘人数：<span>1人</span></li>
-           </ul> -->
            <!-- 岗位职责 -->
            <p>岗位职责:</p>
            <ol>
@@ -136,13 +156,14 @@
            <!-- 联系方式 -->
            <p>联系方式:</p>
            <dl>
-             <dd>联 系 人：<span>陈小姐</span></dd>
-             <dd>招聘专线：<span>18922841928</span></dd>
-             <dd>简历邮箱：<span>xingyi_sz@sina.com</span></dd>
-             <dd>公司地址：<span>深圳市龙岗区坂田街道云里智能园3栋c4—c5室</span></dd>
+             <dd>联 系 人：<em>陈小姐</em></dd>
+             <dd>招聘专线：<em>18922841928</em></dd>
+             <dd>简历邮箱：<em>xingyi_sz@sina.com</em></dd>
+             <dd>公司地址：<em>深圳市龙岗区坂田街道云里智能园3栋c4—c5室</em></dd>
            </dl>
          </div>
-     </div>
+       </li>
+     </ul>
    </div> 
   </div>
 </template>
@@ -162,29 +183,49 @@ export default {
   },
   methods:{
       show(index){
-        if($('.conter_box div').eq(index).is(":visible")){
-            $('.conter_box div').eq(index).hide();
-            $('tbody tr').eq(index).find('img').attr('src','/about_img/down.png')
-            $('tbody tr').eq(index).removeClass('bgGrey')
+        if($('.join_box').eq(index).is(":visible")){
+            $('.join_box').eq(index).hide()
+            $('.join_head').eq(index).find('img').attr('src','/about_img/down.png')
+            $('.join_head').eq(index).removeClass('bgGrey')
         }else{
-            $('.conter_box div').eq(index).show()
-            $('tbody tr').eq(index).find('img').attr('src','/about_img/up.png')
-            $('tbody tr').eq(index).addClass('bgGrey')
+            $('.join_box').eq(index).show()
+            $('.join_head').eq(index).find('img').attr('src','/about_img/up.png')
+            $('.join_head').eq(index).addClass('bgGrey')
         }
+        $('.conter_ul>li').eq(index).siblings().children(".join_box").hide();
+        $('.conter_ul>li').eq(index).siblings().find('img').attr('src','/about_img/down.png')
+        $('.conter_ul>li').eq(index).siblings().children(".join_head").removeClass('bgGrey')
       }
   }   
 }
 </script>
 
 <style scoped>
-.conter_box div{
-  display: none;
+li span,.header_span span{
+  display: inline-block;
+  width: 178px;
+  line-height: 70px;
+  text-align: left;
+  margin-left: 57px;
+  font-size: 20px;
 }
-td{
-  cursor:pointer;
+.conter_ul img{
+  margin-left: 35px;
 }
-.w100{
-  width: 100%
+.header_span{
+  background-color: #F3F3F5;
+  color: #252525;
+  font-weight: bold;
+  font-size: 20px;
+}
+.join_head:hover{
+  background-color: #F3F3F5;
+}
+li{
+  border-top: 1px solid white;
+}
+ol li{
+  border-top: none;
 }
 h1{
   margin-bottom: 36px;
@@ -192,36 +233,20 @@ h1{
 .bgGrey{
   background-color: #F3F3F5
 }
-th,td{
-  padding: 24px 0;
-  border-bottom: 1px solid white;
-}
-.tdColor{
-  color:  #686868;
-}
-tbody tr:hover{
-  background-color: #F3F3F5;
-}
 /*工作详情*/
 .join_box{
   font-size: 14px;
   color: #747474;
   margin-left: 72px;
-}
-ul li{
-  width: 260px;
-  text-align: left;
-  margin-top: 27px;
-  float: left;
+  display: none;
+  background-color: white;
+  padding-bottom: 10px;
 }
 ol>li{
   margin-left: 14px;
   margin-bottom:8px;
 }
 p{
-  margin: 27px 0 12px 0 
-}
-dd{
-  margin-bottom: 5px;
+  margin: 10px 0 12px 0 
 }
 </style>

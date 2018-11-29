@@ -140,7 +140,9 @@
 		<div v-show="isShow">
 		    <div class="modal" @click="isShow=!isShow"></div>
 			<div class="modal_box tl">
+				<img src="/personal_img/down.png" class="m16" @click="isShow=!isShow">
 				<p class="font24 grey">实名认证</p>
+				<span></span>
 				<p><input type="text" name="" placeholder="真实姓名"></p>
 				<p><input type="text" name="" placeholder="身份证号码"></p>
 				<p><button class="active1" @click="isShow=!isShow">确定</button></p>
@@ -150,9 +152,11 @@
 		<div v-show="show">
 		    <div class="modal" @click="show=!show"></div>
 			<div class="modal_box tl">
+				<img src="/personal_img/down.png" class="m16" @click="show=!show">
 				<p class="font24 grey">安全手机设置</p>
+				<span></span>
 				<p><input type="text" name="" placeholder="手机号码" disabled="disabled"></p>
-				<p><input type="text" name="" placeholder="验证码" id="num"><input type="button" name="" value="获取验证码" id="but"></p>
+				<p><input type="text" name="" placeholder="验证码" class="numb"><input type="button" name="" value="获取验证码" class="but"></p>
 				<p><button class="active1" @click="ifshow()">下一步</button></p>
 			</div>
 		</div>
@@ -160,9 +164,11 @@
 		<div v-show="fShow">
 		    <div class="modal" @click="fShow=!fShow"></div>
 			<div class="modal_box tl">
+				<img src="/personal_img/down.png" class="m16" @click="fShow=!fShow">
 				<p class="font24 grey">安全手机设置</p>
+				<span></span>
 				<p><input type="text" name="" placeholder="新的手机号码"></p>
-				<p><input type="text" name="" placeholder="验证码" id="numb"><input type="button" name="" value="获取验证码" id="but"></p>
+				<p><input type="text" name="" placeholder="验证码" class="numb"><input type="button" name="" value="获取验证码" class="but"></p>
 				<p><button class="active1" @click="fShow=!fShow">确定</button></p>
 			</div>
 		</div>
@@ -222,6 +228,9 @@ export default {
 </script>
 
 <style scoped>
+.m16{
+	margin: 16px 0 0 425px;
+}
 span{
 	cursor: pointer;
 }
@@ -231,16 +240,23 @@ span{
 	text-align: center;
 }
 /*模态框*/
+.modal_box>span{
+	display: inline-block;
+	background-color: #EEEEEE;
+	width: 400px;
+	height: 1px;
+	margin-bottom: 33px;
+}
 .modal_box input{
 	padding-left: 10px;
 }
 .modal_box p:nth-child(3){
 	margin: 17px 0 31px 0;
 }
-#numb{
+.numb{
    width: 255px;
 }
-#but{
+.but{
 	width: 145px;
 	height: 51px;
 	background-color: white;

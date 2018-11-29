@@ -1,26 +1,27 @@
 <template>
-	<div class="bgColor ptb3">
-		<div class="bgWhite ptb3 container">
-			<!-- 头部导航 -->
-			<div class="clearfix head_box">
-				<ul class="head_ul clearfix fl tc">
-					<li @click="headChange(0)" class="clickColor">
-						充值到游戏
-                        <div class="arrow-down b"></div>
-					</li>
-					<li @click="headChange(1)">
-						充值到金元宝
-                       <div class="arrow-down"></div>
-					</li>
-					<li @click="headChange(2)">
-					   金元宝充值到游戏
-					   <div class="arrow-down"></div>
-					</li>
-				</ul>
-				<div class="fr font16"><nuxt-link to="/on_recharge/record" tag="a">
-					充值记录>>
-				</nuxt-link></div>
-			</div>
+	<div class="bgColor ptb3" @click="a()">
+		<!-- 头部导航 -->
+		<div class="clearfix head_box container">
+			<img src="/recharge_img/banner.png">
+			<ul class="head_ul clearfix">
+				<li @click="headChange(0)" class="clickColor">
+					充值到游戏
+                    <div class="arrow-down b"></div>
+				</li>
+				<li @click="headChange(1)">
+					充值到金元宝
+                   <div class="arrow-down"></div>
+				</li>
+				<li @click="headChange(2)">
+				   金元宝充值到游戏
+				   <div class="arrow-down"></div>
+				</li>
+			</ul>
+			<!-- <div class="font16"><nuxt-link to="/on_recharge/record" tag="a">
+				充值记录>>
+			</nuxt-link></div> -->
+		</div>
+		<div class="bgWhite container ptb3">
 			<div class="recharge_box">
 				<!-- 充值到游戏 -->
 				<div>
@@ -35,22 +36,19 @@
 							<tr class="two">
 								<td>充值游戏：</td>
 								<td>						
-									<el-select v-model="value" placeholder="请选择">
-									    <el-option
-									      v-for="item in options"
-									      :key="item.value"
-									      :label="item.label"
-									      :value="item.value">
-									    </el-option>
-									</el-select>
-									<el-select v-model="value6" placeholder="请选择">
-									    <el-option
-									      v-for="item in serving"
-									      :key="item.value"
-									      :label="item.label"
-									      :value="item.value">
-									    </el-option>
-									</el-select>
+									<div class="dis" @click="isShow=!isShow">
+										<div class="select_box">
+											<span class="oranges">请选择游戏</span>
+			                                <em class="border"></em>
+										</div>
+										<img src="/recharge_img/img.png" class="abs_select"  v-show="isShow">
+									</div>
+									<div class="dis ml40">
+										<div class="select_box">
+											<span class="oranges">请选择游戏</span>
+			                                <em class="border"></em>
+										</div>
+									</div>
 								</td>
 							</tr>
 							<tr class="three">
@@ -64,16 +62,16 @@
 										<span @click="chooseMoney(1)">20</span>
 										<span @click="chooseMoney(2)">30</span>
 										<span @click="chooseMoney(3)">50</span>
-										<span @click="chooseMoney(4)">100</span>
-										<span @click="chooseMoney(5)">200</span>
-										<span @click="chooseMoney(6)">300</span><br>
-										<span @click="chooseMoney(7)">500</span>
-										<span @click="chooseMoney(8)">1000</span>
-										<span @click="chooseMoney(9)">2000</span>
-										<span @click="chooseMoney(10)">3000</span>
-										<span @click="chooseMoney(11)">5000</span>
+										<span @click="chooseMoney(4)">66</span>
+										<span @click="chooseMoney(5)" class="bg_yes">88</span>
+										<span @click="chooseMoney(6)">100</span><br>
+										<span @click="chooseMoney(7)">150</span>
+										<span @click="chooseMoney(8)">200</span>
+										<span @click="chooseMoney(9)">300</span>
+										<span @click="chooseMoney(10)">500</span>
+										<span @click="chooseMoney(11)">520</span>
 										<span @click="chooseMoney(12)">1000</span>
-										<span @click="chooseMoney(13)">2000</span>
+										<span @click="chooseMoney(13)">1314</span>
 									</p>
 									<p class="other">
 										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textOne" @click="inputText()" placeholder="请输入整数值" @keyup="textOne()">
@@ -83,7 +81,7 @@
 							<tr class="four">
 								<td>支付方式：</td>
 							    <td class="tabTit">
-							    	<button @click="tabChange(0)">微信支付</button>
+							    	<button @click="tabChange(0)" class="bg_yes">微信支付</button>
 							    	<button @click="tabChange(1)">支付宝支付</button>
 							    	<button @click="tabChange(2)">网银支付</button>
 							    </td>
@@ -93,12 +91,12 @@
 					<ul class="tc tabBd">
 						<!-- 微信支付 -->
 						<li class="none">
-							<p class="font12 mb10 bg_yes">微信支付:<span class="orange">0</span>元</p>
-							<p><img src="/recharge_img/phone.png" class="imgA"></p>
+							<p class="font12 mb10 bg_yes">微信支付:<span class="orange">88.00</span>元</p>
+							<p><img src="/recharge_img/ewm.png" class="imgA"></p>
 						</li>
 						<!-- 支付宝支付 -->
 						<li class="none">
-							<p class="font12 mb10">支付宝支付<span class="orange">0</span>元</p>
+							<p class="font12 mb10">支付宝支付：<span class="orange">88.00</span>元</p>
 							<p><img src="/recharge_img/ewm.png"></p>
 						</li>
 						<!-- 网银支付 -->
@@ -146,16 +144,16 @@
 										<span @click="chooseMoney(15)">20</span>
 										<span @click="chooseMoney(16)">30</span>
 										<span @click="chooseMoney(17)">50</span>
-										<span @click="chooseMoney(18)">100</span>
-										<span @click="chooseMoney(19)">200</span>
-										<span @click="chooseMoney(20)">300</span><br>
-										<span @click="chooseMoney(21)">500</span>
-										<span @click="chooseMoney(22)">1000</span>
-										<span @click="chooseMoney(23)">2000</span>
-										<span @click="chooseMoney(24)">3000</span>
-										<span @click="chooseMoney(25)">5000</span>
+										<span @click="chooseMoney(18)">66</span>
+										<span @click="chooseMoney(19)" class="bg_yes">88</span>
+										<span @click="chooseMoney(20)">100</span><br>
+										<span @click="chooseMoney(21)">150</span>
+										<span @click="chooseMoney(22)">200</span>
+										<span @click="chooseMoney(23)">300</span>
+										<span @click="chooseMoney(24)">500</span>
+										<span @click="chooseMoney(25)">520</span>
 										<span @click="chooseMoney(26)">1000</span>
-										<span @click="chooseMoney(27)">2000</span>
+										<span @click="chooseMoney(27)">1314</span>
 									</p>
 									<p class="other">
 										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textTwo" @click="inputText()" placeholder="请输入整数值" @keyup="textTwo()">
@@ -169,7 +167,7 @@
 							<tr class="four">
 								<td>支付方式：</td>
 							    <td class="tabTit">
-							    	<button @click="tabChange(3)">微信支付</button>
+							    	<button @click="tabChange(3)" class="bg_yes">微信支付</button>
 							    	<button @click="tabChange(4)">支付宝支付</button>
 							    	<button @click="tabChange(5)">网银支付</button>
 							    </td>
@@ -179,12 +177,12 @@
 					<ul class="tc tabBd">
 						<!-- 微信支付 -->
 						<li class="none">
-							<p class="font12 mb10">微信支付:<span class="orange">0</span>金元宝</p>
-							<p><img src="/recharge_img/phone.png" class="imgA"></p>
+							<p class="font12 mb10">微信支付:<span class="orange">88.00</span>金元宝</p>
+							<p><img src="/recharge_img/ewm.png" class="imgA"></p>
 						</li>
 						<!-- 支付宝支付 -->
 						<li class="none">
-							<p class="font12 mb10">支付宝支付<span class="orange">0</span>金元宝</p>
+							<p class="font12 mb10">支付宝支付：<span class="orange">88.00</span>金元宝</p>
 							<p><img src="/recharge_img/ewm.png" class="imgA"></p>
 						</li>
 						<!-- 网银支付 -->
@@ -231,22 +229,19 @@
 							<tr class="two">
 								<td>充值游戏：</td>
 								<td>						
-									<el-select v-model="value" placeholder="请选择">
-									    <el-option
-									      v-for="item in options"
-									      :key="item.value"
-									      :label="item.label"
-									      :value="item.value">
-									    </el-option>
-									</el-select>
-									<el-select v-model="value6" placeholder="请选择">
-									    <el-option
-									      v-for="item in serving"
-									      :key="item.value"
-									      :label="item.label"
-									      :value="item.value">
-									    </el-option>
-									  </el-select>
+									<div class="dis" @click="isShow=!isShow">
+										<div class="select_box">
+											<span class="oranges">请选择游戏</span>
+			                                <em class="border"></em>
+										</div>
+										<img src="/recharge_img/img.png" class="abs_select"  v-show="isShow">
+									</div>
+									<div class="dis ml40">
+										<div class="select_box">
+											<span class="oranges">请选择游戏</span>
+			                                <em class="border"></em>
+										</div>
+									</div>
 								</td>
 							</tr>
 							<tr class="three">
@@ -257,16 +252,16 @@
 										<span @click="chooseMoney(29)">20</span>
 										<span @click="chooseMoney(30)">30</span>
 										<span @click="chooseMoney(31)">50</span>
-										<span @click="chooseMoney(32)">100</span>
-										<span @click="chooseMoney(33)">200</span>
-										<span @click="chooseMoney(34)">300</span><br>
-										<span @click="chooseMoney(35)">500</span>
-										<span @click="chooseMoney(36)">1000</span>
-										<span @click="chooseMoney(37)">2000</span>
-										<span @click="chooseMoney(38)">3000</span>
-										<span @click="chooseMoney(39)">5000</span>
+										<span @click="chooseMoney(32)">66</span>
+										<span @click="chooseMoney(33)" class="bg_yes">88</span>
+										<span @click="chooseMoney(34)">100</span><br>
+										<span @click="chooseMoney(35)">150</span>
+										<span @click="chooseMoney(36)">200</span>
+										<span @click="chooseMoney(37)">300</span>
+										<span @click="chooseMoney(38)">500</span>
+										<span @click="chooseMoney(39)">520</span>
 										<span @click="chooseMoney(40)">1000</span>
-										<span @click="chooseMoney(41)">2000</span>
+										<span @click="chooseMoney(41)">1314</span>
 									</p>
 									<p class="other">
 										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textThree" placeholder="请输入整数值" @click="inputText()" @keyup="textThree()">
@@ -309,46 +304,15 @@ export default {
   data () {
     return {
       isShow: false,
-      options: [{
-                value: '选项1',
-                label: '泡泡堂'
-              }, {
-                value: '选项2',
-                label: '跳跳堂'
-              }, {
-                value: '选项3',
-                label: '欢乐麻将'
-              }, {
-                value: '选项4',
-                label: '欢乐斗地主'
-              }, {
-                value: '选项5',
-                label: '绝地求生'
-              }],
-              value: '',
-        serving: [{
-                 value: '选项1',
-                 label: '一区'
-               }, {
-                 value: '选项2',
-                 label: '二区'
-               }, {
-                 value: '选项3',
-                 label: '三区'
-               }, {
-                 value: '选项4',
-                 label: '四区'
-               }, {
-                 value: '选项5',
-                 label: '五区'
-               }, {
-                 value: '选项6',
-                 label: '六区'
-               }],
-               value6: ''
     }
   },
   methods:{
+  	// 图片的出现和隐藏
+  	a(){
+       if($('.abs_select').is(":visible")){
+            $('.abs_select').hide()
+        }
+  	},
   	// 头部导航切换
     headChange(index){
     	$('.head_ul>li').eq(index).addClass('clickColor').siblings().removeClass('clickColor');
@@ -389,7 +353,7 @@ export default {
     chooseMoney(index){
     	// 点击当前额度添加被选状态的类
     	$('.three>td').children('p').children('span').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
-    	$('.other').css("border","none")
+    	$('.other').css("border","1px solid #DBDBDB")
     	// 获取被选择的支付额度
     	$(".orange").text($('.three>td').children('p').children('span').eq(index).text()+".00")
     	if ($(".orange").text()===0) {
@@ -469,50 +433,34 @@ export default {
 }
 </script>
 
-
-
-
-<style>
-.el-input__inner{
-		color: #333;
-	}
-.el-input__inner::-webkit-input-placeholder{
-	color: #333;
-}
-.el-input__inner:-moz-placeholder{
-	color: #333;
-}
-.el-input__inner::-moz-placeholder{
-	color: #333;
-}
-.el-input__inner:-ms-input-placeholder{
-	color: #333;
-}
-</style>
 <style scoped>
-input::-webkit-input-placeholder{
-	color: #666;
+.dis{
+  display: inline-block;
 }
-input:-moz-placeholder{
-	color: #666;
-}
-input::-moz-placeholder{
-	color: #666;
-}
-input:-ms-input-placeholder{
-	color: #666;
-}
-select{
-	width: 275px;
-	height: 55px;
-	outline: none;
-	appearance:none;
-    -moz-appearance:none;
-    -webkit-appearance:none;
+.select_box{
+	width: 253px;
+	line-height: 55px;
     border: 1px solid #FD8F24;
-    padding-left: 15px;
+    border-radius: 5px;
+    padding-left: 20px;
     font-size: 18px;
+    margin: 0;
+    position: relative;
     background: url(/recharge_img/down.png) no-repeat right 15px center;
+}
+.abs_select{
+	position: absolute;
+	bottom: 16px;
+}
+.border{
+	display: inline-block;
+	width: 1px;
+	height: 30px;
+	background:rgba(253,143,36,1);
+	margin: 0 0 -8px 73px;
+}
+.ml40{
+	margin-left: 40px;
 }
 td .asset{
 	font-size: 26px;
@@ -561,38 +509,20 @@ a:hover{
 .head_ul .b{
 	display: block;
 }
-/*向下箭头*/
-.arrow-down{
-	width:0;
-	height:0;
-	border-left:10px solid transparent;
-	border-right:10px solid transparent;
-	border-top:10px solid #FD8F24;
-}
-/*头部导航*/
-.head_box{
-	line-height: 82px;
-    padding-right: 45px;
-    margin-bottom: 64px;
-    border-bottom: 1px solid #E7E7E7;
-}
 .head_ul li{
      float: left;
-     width: 260px;
-     height: 82px;
-     line-height: 82px;
-     font-size: 22px;
-     color: #999;
-     border-left: 1px solid white;
-     position: relative; 
+     height: 38px;
+     font-size: 20px;
+     color: #333;
+     margin: 43px 0 20px 216px;
 }
 .head_ul li:hover{
-	background-color: #FD8F24;
-	color: white;
+	color: #FD8F24;
+	border-bottom: 3px solid #FD8F24;
 }
 .head_ul .clickColor{
-	background-color: #FD8F24;
-	color: white;
+	color: #FD8F24;
+	border-bottom: 3px solid #FD8F24;
 }
 .head_ul div{
 	display: none;
@@ -603,8 +533,9 @@ a:hover{
 .margin{
 	margin: 0 73px;
 }
-td,button,input{
+td,input{
 	font-size: 18px;
+	color:#333;
 }
 li>p{
 	font-size: 24px;
@@ -617,20 +548,27 @@ li>p{
 	top: 35px;
 	left: 10px;
 }
-input,button{
+input{
 	outline: none;
 	border: 1px solid #DBDBDB;
-	height: 50px;
-	line-height: 48px;	
+	line-height: 48px;
+	width: 206px;	
 }
 button{
+	width: 155px;
+	line-height: 48px;
+	font-size: 20px;
+	color: #333;
+	outline: none;
+	border: 1px solid #DBDBDB;
+	background-color: rgba(252,252,252,1);
 	padding: -1px 10px;
 }
 input{
 	padding: 0 10px;
 }
 .one span{
-	font-size: 22px;
+	font-size: 18px;
 	color: #FD8F24;
 	margin-left: 22px;
 }
@@ -648,7 +586,7 @@ input{
  	margin-left: 10px;
  }
  .three span{
- 	background-color: #F8F8F8;
+ 	background-color: rgba(252,252,252,1);
  	width: 113px;
  	height: 48px;
  	line-height: 48px;
@@ -674,7 +612,7 @@ input{
  	margin: 0;
  	padding-left: 10px;
  	font-size: 9px;
- 	height: 52px;
+ 	height: 48px;
  }
  .four button{
  	background-color: #fff;

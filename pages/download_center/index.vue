@@ -1,24 +1,19 @@
 <template>
   <div>
-    <div  class="download_bgimg1">
-      <div class="clearfix pt5 container">
-        <div class="tc fl rel wow fadeIn" data-wow-duration="6s">
-          <img src="/down_img/box.png" alt="图片加载中.." class="mt160">
-          <img src="/down_img/star.png" alt="图片加载中.." class="abs animate-bounce-down">
+    <div  class="download_bgimg1" @load="loading()">
+      <div class="pt5 container">
+        <div class="tc wow fadeIn  clearfix" data-wow-duration="6s">
+          <img src="/down_img/star.png" alt="图片加载中.." class="mt90 fl animate-bounce-down">
+          <img src="/down_img/text1.png" alt="文字加载中.." class="fr mt170 wow fadeInUp" data-wow-duration="0.5s">
         </div>
-        <div class="tl white fr mr205 div1" @load="loading()">
-          <p class="mb116 wow fadeInUp" data-wow-duration="0.5s">
-            <img src="/down_img/text1.png" alt="文字加载中.." class="w50">
-          </p>
-          <p class="bgYellow black borR20 tc mar0 rel wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
-            <img src="/down_img/download.png" class="mid"> <a href="javascript:" id="a" class="mid">下载星移盒子APP</a>
-            <img src="/down_img/app.png" class="app_abs">
-          </p>
-        </div>
+        <p class="bgYellow black borR20 tc  rel wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+          <img src="/down_img/download.png" class="mid"> <a href="javascript:" id="a" class="mid">下载星移盒子APP</a>
+          <img src="/down_img/app.png" class="app_abs">
+        </p>
       </div>
     </div>
     <div class="download_bgimg2">
-        <div class="clearfix container download_div1">
+        <div class="clearfix container">
           <div class="fl wow fadeInLeft mt156" data-wow-duration="0.5s" data-wow-delay="0.5s">
             <p><img src="/down_img/text2.png" alt="文字加载中.."></p>
             <p class="grey mt45 font24">带你发现更大的游戏世界</p>
@@ -83,30 +78,30 @@ export default {
   }
   .download_bgimg1{
     width: 100%;
-    height: 100%;
-    background: url(/down_img/banner.png);
+    height: 875px;
+    background: url(/down_img/banner.png) no-repeat;
+    background-size: 100% 877px;
   }
   .download_bgimg2{
     width: 100%;
-    height: 100%;
+    height: 875px;
+    padding: 115px 0;
     background: url(/down_img/download_bgimg2.png);
+    background-size: 100% 877px;
   }
   .borR20{
     border-radius:35px;
     width: 317px;
     line-height: 70px;
   }
-  .download_div1{
-    padding: 115px 0;
-    height: 875px;
-  }
   body .mar0{
     margin: 0;
   }
-  .abs{
-    position: absolute;
-    top: 112px;
-    right: 28px;
+  .mt90{
+    margin: 110px 0 0 186px;
+  }
+  .mt170{
+    margin: 190px 240px 92px 0;
   }
   /*上下移动动画*/
   @-webkit-keyframes bounce-down {
@@ -163,12 +158,6 @@ export default {
   }
   .rel{
     position: relative;
-  }
-  .pt5{
-    /*padding-top: 145px;*/
-  }
-  .mb116{
-    margin: 242px 0 67px 0;
   }
   li a{
     color: #fff;
