@@ -199,7 +199,8 @@
 		.game_list
 			height 50px
 			background #f3f3f3
-			font-size 15px
+			font-size 16px
+			bold()
 			ul
 				float left
 				margin-left 1px

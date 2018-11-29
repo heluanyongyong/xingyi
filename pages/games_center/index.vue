@@ -32,17 +32,17 @@
     					</div>
     				</div>
     				<div class="content_left_bottom">
-						<div class="title">开服</div>
+						<div class="title">游戏开服</div>
 						<table>
-							<thead>
+							<!-- <thead>
 								<tr>
 									<td>游戏名称</td>
 									<td>开服时间</td>
 									<td>新服名称</td>
 								</tr>
-							</thead>
+							</thead> -->
 							<tbody>
-								<tr v-for="item in 20" :key="item">
+								<tr v-for="item in 18" :key="item">
 									<td>王者归来...</td>
 									<td>10.29 14:00</td>
 									<td>王者归来...</td>
@@ -157,7 +157,7 @@ export default{
 		width 100%
 .center
 	padding 50px 0 45px 0
-	background rgba(248,248,248,1)
+	background #fafafa
 	.container
 		container()
 		.content_left
@@ -176,10 +176,12 @@ export default{
 				&:hover
 					box-shadow 0 0 5px lightgray
 				.warp
-					padding 25px 40px
+					padding 25px 40px 25px 25px
 					.title
-						font-size 16px
-						margin-bottom 20px
+						font-size 20px
+						color #303030
+						bold()
+						margin-bottom 10px
 						letter-spacing 2px
 					li
 						height 40px
@@ -190,7 +192,7 @@ export default{
 							color #333333
 							transition all 0.25s
 							font-size 15px
-							color #999
+							color #333
 							&.active
 								color #FD8F24
 							&:hover
@@ -204,9 +206,12 @@ export default{
 				&:hover
 					box-shadow 0 0 5px lightgray
 				.title
-					font-size 16px
-					padding 20px 0 10px 15px
-					letter-spacing 6px
+					font-size 20px
+					bold()
+					letter-spacing 2px
+					color #303030
+					padding 20px 0 10px 25px
+					border-bottom 1px solid rgb(238,238,238)
 				table
 					width 100%
 					public_tr(col,font,bg,pd)
@@ -223,12 +228,12 @@ export default{
 							padding-left 10px
 						td:last-child
 							padding-right 10px
-					thead
+					/*thead
 						tr
 							public_tr(#333,16px,#efefef,15px)
 							td
 								font-size 14px
-							public_td()
+							public_td()*/
 					tbody
 						tr
 							public_tr(#666,13px,#fff,7px)
@@ -239,6 +244,7 @@ export default{
 							td
 								transition all 0.25s
 								font-size 12px
+								color #999
 							public_td()
 					tfoot
 						tr
@@ -265,7 +271,8 @@ export default{
 				a
 					margin-right 50px
 					color #333
-					font-size 15px
+					bold()
+					font-size 16px
 					transition all 0.25s
 					&.active
 						color #FD8F24
@@ -287,10 +294,7 @@ export default{
 							background white
 							transition all 0.5s
 							&:hover
-								border 1px solid #fd8f24
 								box-shadow 0 0 10px lightgray
-								p
-									color #fd8f24 !important
 							.imgdiv
 								line-height 0
 								position relative
@@ -320,16 +324,17 @@ export default{
 												color #FD8F24
 							p
 								text-align center
-								margin-top 6px
+								margin-top 4px
 								&.title
 									font-size 15px
-									color #333
-									margin 15px 0 10px 0
+									bold()
+									color #444
+									margin 10px 0 6px 0
 									padding 0 20px
 									transition all 0.5s
 								&.content
 									font-size 12px
-									color #666
+									color #888
 									transition all 0.5s
 									&:last-child
 										padding-bottom 15px
