@@ -10,7 +10,7 @@
 						<nuxt-link to="/login/register">注册</nuxt-link>
 					</li>
 					<li v-if="account=='true'">
-						<img src="/games_center/pic1.png" alt="" @click="$router.push('/personal_center')">
+						<img class="img1" src="/games_center/pic1.png" alt="" @click="$router.push('/personal_center')">
 						<span><nuxt-link to="/personal_center">星移盒子</nuxt-link></span>
 					</li>
 					<li v-if="account=='true'">
@@ -103,12 +103,16 @@ top1_h=32px
 				font-size 12px
 				&:hover
 					color #FD8F24
-			img,a,span
+			img,a
 				vertical-align middle
 			img
 				margin-right 2px
+				margin-top 2px
 				&:last-child
 					margin-right 1px
+			.img1
+				width 18px
+				margin-top 0
 			.pos_div
 				width 160px
 				position relative
