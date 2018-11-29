@@ -119,6 +119,7 @@ top1_h=32px
 					height 22px
 					border-radius 10px
 					padding 0 40px 0 20px
+					border 1px solid rgb(227,227,227)
 				.inner_img
 					width 10px
 					position absolute
@@ -128,7 +129,7 @@ top1_h=32px
 					cursor pointer
 ._top1
 	height top1_h
-top2_h=60px
+top2_h=65px
 .top2
 	overflow hidden
 	fixed_top()
@@ -136,10 +137,10 @@ top2_h=60px
 	background rgba(255,255,255,1)
 	border-top 1px solid #e1e1e1
 	.navimg
-		margin-top 10px
 		margin-left 6px
 		cursor pointer
-		width 110px
+		width 120px
+		margin-top 12px
 	.game_list
 		float right
 		height top2_h
@@ -176,8 +177,8 @@ top2_h=60px
 					.bottom
 						top 0
 				a
-					font-size 15px
-					color #888
+					font-size 17px
+					color #5e5e5e
 					/*路由颜色*/
 					&.nuxt-link-active
 						color #FD8F24
