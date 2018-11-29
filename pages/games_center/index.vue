@@ -309,6 +309,7 @@ export default{
 									top 0 
 									left 0
 									text-align center
+									cursor pointer
 									.info
 										margin-top 110px
 										a

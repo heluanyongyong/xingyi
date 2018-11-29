@@ -138,6 +138,7 @@ top2_h=60px
 	.navimg
 		margin-top 10px
 		margin-left 6px
+		cursor pointer
 		width 110px
 	.game_list
 		float right
