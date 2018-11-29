@@ -84,6 +84,7 @@
 							    	<button @click="tabChange(0)" class="bg_yes">微信支付</button>
 							    	<button @click="tabChange(1)">支付宝支付</button>
 							    	<button @click="tabChange(2)">网银支付</button>
+							    	<nuxt-link to="/on_recharge/record" tag="a" class="oranges">充值记录</nuxt-link>
 							    </td>
 							</tr>
 						</tbody>
@@ -170,6 +171,7 @@
 							    	<button @click="tabChange(3)" class="bg_yes">微信支付</button>
 							    	<button @click="tabChange(4)">支付宝支付</button>
 							    	<button @click="tabChange(5)">网银支付</button>
+							    	<nuxt-link to="/on_recharge/record" tag="a" class="oranges">充值记录</nuxt-link>
 							    </td>
 							</tr>
 						</tbody>
@@ -224,6 +226,7 @@
                                     <input type="text" value="星移" disabled class="read2" required="required" @blur="textChange2()"><span @click="remove2()">更改帐号</span>
                                     <em class="my">我的金元宝：</em>
 									<em class="asset">10000</em>
+									<nuxt-link to="/on_recharge/record" tag="a" class="oranges ml40">充值记录</nuxt-link>
 								</td>	
 							</tr>
 							<tr class="two">
