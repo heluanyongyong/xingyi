@@ -60,7 +60,8 @@
 	padding 40px
 	font-size 14px
 	.title
-		font-size 20px
+		font-size 28px
+		color #333
 	.top
 		margin-top 20px
 		border-bottom 1px solid rgb(189,189,189)

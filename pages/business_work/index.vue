@@ -13,7 +13,7 @@
 		</div> -->
 		<div class="bottom">
 			<div class="container">
-				<p class="title">商务合作</p>
+				<p class="title black">商务合作</p>
 				<div class="left">
 					<p class="p1">星移信息</p>
 					<p>全球授权（客户端/页游端/手游端）</p>
@@ -75,7 +75,7 @@
 				width 100%
 .bottom
 	p.title
-		font-size 20px
+		font-size 28px
 	background #fff
 	.container
 		font-size 14px

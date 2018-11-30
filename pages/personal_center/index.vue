@@ -2,7 +2,7 @@
 	<div class="bgColor clearfix ptb3">
 		<div class="container bgWhite clearfix">
 			<div class="fl div_left">
-				<h1>个人中心</h1>
+				<div class="font28 black">个人中心</div>
 				<ul class="ul_left">
 					<li @click="listChange(0)" class="active">我的账号</li>
 					<li @click="listChange(1)">账号问题</li>
@@ -31,7 +31,7 @@
 								<ul class="clearfix">
 									<li><img src="/personal_img/name.png"></li>
 									<li>
-										<p class="font24">实名认证</p>
+										<p class="font22">实名认证</p>
 										<p class="font16 gray">根据国家有关规定，您在进入游戏时需要进行实名及防沉迷验证</p>
 									</li>
 									<li id="fristLi" @click="listChange(1)">防沉迷规则</li>
@@ -39,7 +39,7 @@
 								<ul class="clearfix">
 									<li><img src="/personal_img/phone.png"></li>
 									<li>
-										<p class="font24">安全手机</p>
+										<p class="font22">安全手机</p>
 										<p class="font16 gray">手机是保护账号安全最重要的手段，请不要泄露您的手机号和手机验证码。</p>
 									</li>
 									<li @click="show=!show">设置</li>
@@ -47,7 +47,7 @@
 								<ul class="clearfix">
 									<li><img src="/personal_img/sub.png"></li>
 									<li>
-										<p class="font24">密码设置</p>
+										<p class="font22">密码设置</p>
 										<p class="font16 gray">密码设置 修改原密码，找回密码等功能在此。</p>
 									</li>
 									<li @click="listChange(2)">设置</li>
@@ -72,7 +72,7 @@
 								<ul class="clearfix">
 									<li><img src="/personal_img/name.png"></li>
 									<li>
-										<p class="font24">实名认证</p>
+										<p class="font22">实名认证</p>
 										<p class="font16 gray">根据国家有关规定，您在进入游戏时需要进行实名及防沉迷验证</p>
 									</li>
 									<li @click="isShow=!isShow">设置</li>
@@ -80,7 +80,7 @@
 								<ul class="clearfix">
 									<li><img src="/personal_img/phone.png"></li>
 									<li>
-										<p class="font24">安全手机</p>
+										<p class="font22">安全手机</p>
 										<p class="font16 gray">手机是保护账号安全最重要的手段，请不要泄露您的手机号和手机验证码。</p>
 									</li>
 									<li @click="show=!show">设置</li>
@@ -88,7 +88,7 @@
 								<ul class="clearfix">
 									<li><img src="/personal_img/sub.png"></li>
 									<li>
-										<p class="font24">密码设置</p>
+										<p class="font22">密码设置</p>
 										<p class="font16 gray">密码设置 修改原密码，找回密码等功能在此。</p>
 									</li>
 									<li @click="listChange(2)">设置</li>
@@ -124,7 +124,7 @@
 					</li>
 					<!-- 修改密码 -->
 					<li class="tc list2 none">
-						<p class="font36 black mb49">星移盒子</p>
+						<p class="font28 black mb49">星移盒子</p>
 						<form class="tr w462" method="post" name="myform" v-on:submit.prevent="onSubmit">
 							<p><span>原密码</span><input type="password" name="primitive"  placeholder="请输入原密码"></p>
 							<p><span>新密码</span><input type="password" name="password" placeholder="8-16位数字或者是字母加数字"></p>
@@ -141,7 +141,7 @@
 		    <div class="modal" @click="isShow=!isShow"></div>
 			<div class="modal_box tl">
 				<img src="/personal_img/down.png" class="m16" @click="isShow=!isShow">
-				<p class="font24 grey">实名认证</p>
+				<p class="font22 grey">实名认证</p>
 				<span></span>
 				<p><input type="text" name="" placeholder="真实姓名"></p>
 				<p><input type="text" name="" placeholder="身份证号码"></p>
@@ -153,10 +153,12 @@
 		    <div class="modal" @click="show=!show"></div>
 			<div class="modal_box tl">
 				<img src="/personal_img/down.png" class="m16" @click="show=!show">
-				<p class="font24 grey">安全手机设置</p>
+				<p class="font22 grey">安全手机设置</p>
 				<span></span>
 				<p><input type="text" name="" placeholder="手机号码" disabled="disabled"></p>
-				<p><input type="text" name="" placeholder="验证码" class="numb"><input type="button" name="" value="获取验证码" class="but"></p>
+				<p><input type="text" name="" placeholder="验证码" class="numb">
+				   <button class="but">获取验证码</button>
+				</p>
 				<p><button class="active1" @click="ifshow()">下一步</button></p>
 			</div>
 		</div>
@@ -165,7 +167,7 @@
 		    <div class="modal" @click="fShow=!fShow"></div>
 			<div class="modal_box tl">
 				<img src="/personal_img/down.png" class="m16" @click="fShow=!fShow">
-				<p class="font24 grey">安全手机设置</p>
+				<p class="font22 grey">安全手机设置</p>
 				<span></span>
 				<p><input type="text" name="" placeholder="新的手机号码"></p>
 				<p><input type="text" name="" placeholder="验证码" class="numb"><input type="button" name="" value="获取验证码" class="but"></p>
@@ -228,6 +230,9 @@ export default {
 </script>
 
 <style scoped>
+.font22{
+	font-size: 22px;
+}
 .m16{
 	margin: 16px 0 0 425px;
 }
@@ -254,18 +259,18 @@ span{
 	margin: 17px 0 31px 0;
 }
 .numb{
-   width: 255px;
+   width: 248px;
 }
 .but{
 	width: 145px;
-	height: 51px;
+	height: 50px;
 	background-color: white;
 	color: #FD8F24;
 	border-left: none;
 	padding-left: 0;
 }
 /*左边列表样式*/
-h1{
+.font28{
 	padding: 55px 0 30px 42px;
 }
 .div_left{
@@ -283,7 +288,7 @@ h1{
 	line-height: 73px;
 	color: #666666;
 	text-align: center;
-	font-size: 22px;
+	font-size: 20px;
 	border-bottom: 1px solid white;
 }
 .ul_left li:hover{
@@ -296,6 +301,7 @@ h1{
 }
 .active1{
 	color: white;
+	font-size: 16px;
 	background-color: #FD8F24;
 }
 /*修改密码样式*/
@@ -311,6 +317,7 @@ input,button{
 	line-height: 50px;
 	border: 1px solid #D6D6D6;
 	outline: none;
+	margin: 0
 }
 p{
    margin-bottom: 17px;
@@ -339,11 +346,11 @@ dd p{
 	margin-top: 30px;
 }
 em{
-	font-size: 20px;
+	font-size: 18px;
 	color: #999;
 }
 span{
-	font-size: 24px;
+	font-size: 18px;
 }
 .p{
 	background-color: #EFEFEF;

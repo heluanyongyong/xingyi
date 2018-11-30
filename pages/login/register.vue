@@ -33,8 +33,7 @@ input:hover
 		padding-bottom 20px
 		.span_left
 			color #666
-			font-size 18px
-			bold()
+			font-size 22px
 		.span_right
 			color #999
 			float right

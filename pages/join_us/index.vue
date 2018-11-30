@@ -2,7 +2,7 @@
 	<div>
    <div><img src="/about_img/join.png" class="w100"></div>
    <div class="container ptb3">
-     <h1>加入我们</h1>
+     <div class="font28 black">加入我们</div>
      <!-- <table class="container tc font20">
        <thead>
          <tr class="bgGrey">
@@ -37,7 +37,7 @@
          </tr>
        </tbody>
      </table> -->
-     <div class="header_span container">
+     <div class="header_span container font20">
        <span>职位类型</span>
        <span>工作地点</span>
        <span>发布时间</span>
@@ -46,7 +46,7 @@
      </div>
      <ul class="conter_ul container">
        <li @click="show(0)">
-          <div class="join_head">
+          <div class="join_head font18">
            <span>销售/客服/技术支持</span>
            <span>深圳 龙岗区</span>
            <span>2018-11-09</span>
@@ -88,7 +88,7 @@
          </div>
        </li>
        <li @click="show(1)">
-         <div class="join_head">
+         <div class="join_head font18">
            <span>Java</span>
            <span>深圳 龙岗区</span>
            <span>2018-11-09</span>
@@ -126,7 +126,7 @@
          </div>
        </li>
        <li @click="show(2)">
-         <div class="join_head">
+         <div class="join_head font18">
            <span>PHP</span>
            <span>深圳 龙岗区</span>
            <span>2018-11-09</span>
@@ -201,13 +201,12 @@ export default {
 </script>
 
 <style scoped>
-li span,.header_span span{
+.join_head>span,.header_span>span{
   display: inline-block;
   width: 178px;
   line-height: 70px;
   text-align: left;
   margin-left: 57px;
-  font-size: 20px;
 }
 .conter_ul img{
   margin-left: 35px;
@@ -215,11 +214,12 @@ li span,.header_span span{
 .header_span{
   background-color: #F3F3F5;
   color: #252525;
-  font-weight: bold;
-  font-size: 20px;
 }
 .join_head:hover{
   background-color: #F3F3F5;
+}
+.font18{
+  color: #5e5e5e;
 }
 li{
   border-top: 1px solid white;
@@ -227,7 +227,7 @@ li{
 ol li{
   border-top: none;
 }
-h1{
+.font28{
   margin-bottom: 36px;
 }
 .bgGrey{

@@ -4,7 +4,7 @@
 			<img src="/contact_us/banner.png" alt="">
 		</div>
 		<div class="container">
-			<p class="title">联系我们</p>
+			<p class="title black">联系我们</p>
 			<mapset class="canvas"></mapset>
 			<!-- <no-ssr>
 		    	<div class="amap-wrapper">
@@ -35,7 +35,7 @@
 			width 100%
 	.container
 		p.title
-			font-size 20px
+			font-size 28px
 		padding 40px 0 50px 0
 		.canvas
 			margin-top 20px

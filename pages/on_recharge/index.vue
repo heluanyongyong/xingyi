@@ -560,7 +560,7 @@ input{
 button{
 	width: 155px;
 	line-height: 48px;
-	font-size: 20px;
+	font-size: 18px;
 	color: #333;
 	outline: none;
 	border: 1px solid #DBDBDB;

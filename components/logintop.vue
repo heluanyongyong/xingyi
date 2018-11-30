@@ -22,10 +22,12 @@
 		float left
 		li
 			float left
+			color #555
 			margin-right 25px
 			/*若宽度发生改变、行高也应发生相应改变*/
 			line-height 60px
 			font-size 22px
+			font-weight 700
 			vertical-align middle
 			&.line
 				height 100%

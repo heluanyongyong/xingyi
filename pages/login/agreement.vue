@@ -264,7 +264,7 @@
 .container
 	color #333
 	.title1
-		font-size 26px
+		font-size 28px
 	hr
 		background-color rgb(189,189,189)
 		height 1px

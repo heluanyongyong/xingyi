@@ -21,8 +21,9 @@
 	padding 150px 400px 200px 400px
 	text-align center
 	.title
-		font-size 20px
-		font-weight bold
+		font-size 28px
+		font-weight 500
+		color #333
 	.center
 		margin 30px 0 15px 0
 	.bottom

@@ -1,7 +1,7 @@
 <template>
 	<div class="bgColor ptb3">
 		<div class="container bgWhite padding">
-			<h1>充值记录</h1>
+			<div class="mb33 font28 black">充值记录</div>
 			<div class="wBtBorder box">
 				<ul class="top_ul clearfix">
 					<li @click="liChange(0)" class="liClick">充值到游戏</li>
@@ -168,7 +168,7 @@ export default {
 .padding{
 	padding: 50px 46px 50px 60px;
 }
-h1{
+.mb33{
 	margin-bottom: 33px;
 }
 .box{
@@ -198,10 +198,13 @@ table{
 th{
    padding: 16px 0;
    background-color: #F5F5F5;
+   font-weight: 500;
+   color: #333;
 }
 td{
 	font-size: 14px;
 	padding: 16px 0;
+	color: #5e5e5e;
 	border-bottom: 1px solid #DDDDDD
 }
 </style>
