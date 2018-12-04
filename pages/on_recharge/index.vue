@@ -17,9 +17,6 @@
 				   <div class="arrow-down"></div>
 				</li>
 			</ul>
-			<!-- <div class="font16"><nuxt-link to="/on_recharge/record" tag="a">
-				充值记录>>
-			</nuxt-link></div> -->
 		</div>
 		<div class="bgWhite container ptb3">
 			<div class="recharge_box">
@@ -222,11 +219,11 @@
 						<tbody>
 							<tr class="one">
 								<td>充值账号：</td>
-								<td>
+								<td class="item">
                                     <input type="text" value="星移" disabled class="read2" required="required" @blur="textChange2()"><span @click="remove2()">更改帐号</span>
                                     <em class="my">我的金元宝：</em>
 									<em class="asset">10000</em>
-									<nuxt-link to="/on_recharge/record" tag="a" class="oranges ml40">充值记录</nuxt-link>
+									<nuxt-link to="/on_recharge/record" tag="a" class="oranges ml40" @click="del(this)">充值记录</nuxt-link>
 								</td>	
 							</tr>
 							<tr class="two">
@@ -284,14 +281,14 @@
 			<!-- 背景框 -->
 		    <div class="modal"></div>
 		    <!-- 内容 -->
-			<div class="modal_box tl">
+			<form class="modal_box tl" method="post" action="">
 				<p class="font24 grey ">信息完善</p>
 				<p><input type="text" name="" placeholder="真实姓名"></p>
 				<p><input type="text" name="" placeholder="身份证号码"></p>
 				<p><input type="text" name="" placeholder="手机号码"></p>
 				<p><input type="text" name="" placeholder="验证码" id="num"><input type="button" name="" value="获取验证码" id="num_but"></p>
 				<p><input type="button" name="" value="确定" class="white bgOrange"></p>
-			</div>
+			</form>
 		</div>
 	</div>
 </template>
@@ -437,6 +434,30 @@ export default {
 </script>
 
 <style scoped>
+.head_ul .b{
+	display: block;
+}
+.head_ul li{
+     float: left;
+     height: 38px;
+     font-size: 20px;
+     color: #333;
+     margin: 43px 0 20px 216px;
+}
+.head_ul li:hover{
+	color: #FD8F24;
+	border-bottom: 3px solid #FD8F24;
+}
+.head_ul .clickColor{
+	color: #FD8F24;
+	border-bottom: 3px solid #FD8F24;
+}
+.head_ul div{
+	display: none;
+	position: absolute;
+    left: 125px;
+}
+/*游戏选择*/
 .dis{
   display: inline-block;
 }
@@ -450,6 +471,7 @@ export default {
     margin: 0;
     position: relative;
     background: url(/recharge_img/down.png) no-repeat right 15px center;
+    cursor:pointer;
 }
 .abs_select{
 	position: absolute;
@@ -480,62 +502,10 @@ td .asset{
 a:hover{
 	color:#FD8F24;
 }
-/*信息完善*/
-.modal_box{
-	height: 540px;
-}
-.modal_box input{
-	width: 398px;
-	height: 50px;
-}
-.modal_box p:nth-child(1){
-	padding-bottom: 23px;
-	border-bottom: 1px solid #EEEEEE;
-	margin-right: 63px;
-	margin-bottom: 33px
-}
-.modal_box p:nth-child(6){
-	margin-top: 30px
-}
-.modal_box p{
-    margin-bottom: 17px;
-}
-#num{
-	width: 254px;
-}
-#num_but{
-	width: 144px;
-	background-color: white;
-	color: #FD8F24;
-	border-left: none;
-}
-.head_ul .b{
-	display: block;
-}
-.head_ul li{
-     float: left;
-     height: 38px;
-     font-size: 20px;
-     color: #333;
-     margin: 43px 0 20px 216px;
-}
-.head_ul li:hover{
-	color: #FD8F24;
-	border-bottom: 3px solid #FD8F24;
-}
-.head_ul .clickColor{
-	color: #FD8F24;
-	border-bottom: 3px solid #FD8F24;
-}
-.head_ul div{
-	display: none;
-	position: absolute;
-    left: 125px;
-}
-/*充值详情*/
 .margin{
 	margin: 0 73px;
 }
+/*充值内容*/
 td,input{
 	font-size: 18px;
 	color:#333;
@@ -675,5 +645,34 @@ table .bg_yes{
 	border-radius:6px;
 	color: white;
 	margin-top: 85px;
+}
+/*信息完善*/
+.modal_box{
+	height: 540px;
+}
+.modal_box input{
+	width: 398px;
+	height: 50px;
+}
+.modal_box p:nth-child(1){
+	padding-bottom: 23px;
+	border-bottom: 1px solid #EEEEEE;
+	margin-right: 63px;
+	margin-bottom: 33px
+}
+.modal_box p:nth-child(6){
+	margin-top: 30px
+}
+.modal_box p{
+    margin-bottom: 17px;
+}
+#num{
+	width: 254px;
+}
+#num_but{
+	width: 144px;
+	background-color: white;
+	color: #FD8F24;
+	border-left: none;
 }
 </style>

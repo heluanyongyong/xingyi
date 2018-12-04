@@ -10,9 +10,9 @@
 	  </ul> -->
 	  	<div class="w100 bgWhite">
 		  	<ul class="ul clearfix container">
-			  	<li @click="tabChange(0)" class="add">公司简介</li>
-			  	<li @click="tabChange(1)">发展历程</li>
-			  	<li @click="tabChange(2)">企业文化</li>
+			  	<li @click="tabChange(0)" class="add" title="公司简介">公司简介</li>
+			  	<li @click="tabChange(1)" title="发展历程">发展历程</li>
+			  	<li @click="tabChange(2)" title="企业文化">企业文化</li>
 		  	</ul>
 	  	</div>
 	    <ul class="container ptb3 changeBox">
@@ -104,7 +104,6 @@ export default {
 
 <style scoped>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -135,7 +134,6 @@ export default {
 .w{
 	width: 720px;
 }
-
 
 /*发展历程*/
 .dl_left dd{

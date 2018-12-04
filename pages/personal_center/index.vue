@@ -16,7 +16,10 @@
 						<!--注册登录-->
 						<div>
 							<dl class="clearfix">
-								<dd><img src="/personal_img/header.png"></dd>
+								<dd class="use-img" @click="imgFalse=!imgFalse">
+									<img src="/personal_img/header.png">
+									<span class="change_img">更换头像</span>
+								</dd>
 								<dd>
 									<p><em>账号：</em><span>星移盒子</span></p>
 									<p><em>真实姓名：</em><span>星移盒子</span></p>
@@ -130,12 +133,26 @@
 							<p><span>新密码</span><input type="password" name="password" placeholder="8-16位数字或者是字母加数字"></p>
 							<p><span>确认密码</span><input type="password" name="notarize" placeholder="请与新密码保持一致"></p>
 							<p id="caution"></p>
-							<p class="mt45"><input type="submit" name="" value="确认" class="bgOrange white"></p>
+							<p class="mt45"><input type="submit" name="sub" value="确认" class="bgOrange white"></p>
 						</form>
 					</li>
 				</ul>
 			</div>
 		</div>
+		<!-- 更换头像 -->
+        <div v-show="imgFalse">
+        	<div class="modal" @click="imgFalse=!imgFalse"></div>
+        	<div class="useImg_box tc">
+        		<p class="tr" @click="imgFalse=!imgFalse"><img src="/personal_img/down.png"></p>
+        		<p class="font22 grey tl">更换头像</p>
+        		<span class="useImg_big"><img src="/personal_img/use_img.png"></span>
+        		<p><a href="javascript:"  class="oranges">上传头像</a></p>
+        		<p>
+        			<span class="cancel" @click="imgFalse=!imgFalse">取消</span>
+        			<span class="confirm white bgOrange" @click="imgFalse=!imgFalse">确定</span>
+        		</p>
+        	</div>
+        </div>
 		<!-- 实名认证 -->
 		<div v-show="isShow">
 		    <div class="modal" @click="isShow=!isShow"></div>
@@ -192,7 +209,9 @@ export default {
       // 旧号码更改
       show:false,
       // 新号码更改
-      fShow:false
+      fShow:false,
+      // 跟换头像
+      imgFalse:false
     }
   },
     methods:{
@@ -224,25 +243,83 @@ export default {
                 notarize.value=""
                 error.style.display="none"
 			}
+		},
+		useImg(){
+
 		}
     }
 }
 </script>
 
 <style scoped>
-.font22{
-	font-size: 22px;
-}
-.m16{
-	margin: 16px 0 0 425px;
-}
 span{
 	cursor: pointer;
 }
-#caution{
-	color: red;
-	font-size: 16px;
-	text-align: center;
+/*更换头像*/
+.use-img{
+	width: 138px;
+	height: 138px;
+	border-radius: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.change_img{
+	display: inline-block;
+	width: 100%;
+	line-height: 42px;
+	margin-top: 97px;
+	background-color: rgba(0,0,0,0.6);
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    display: none;
+    transition:height 0.6s;
+}
+.use-img:hover .change_img{
+	display: block;
+}
+.useImg_box{
+	width: 670px;
+	height: 488px;
+	position: fixed;
+    background:rgba(255,255,255,1);
+    top: 25%;
+    left: 25%;
+    bottom: 25%;
+    right: 25%;
+    padding: 15px 20px 15px 30px;
+}
+.use-img>img{
+  transition: all 0.6s;
+}
+.use-img>img:hover{
+  transform: scale(1.2);
+}
+.useImg_big{
+	display: inline-block;
+	width: 237px;
+	height: 237px;
+	border-radius: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.cancel,.confirm{
+	display: inline-block;
+    width: 150px;
+    line-height: 50px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+}
+.cancel{
+	background-color: #D5D5D5;
+	color: #797979;
+}
+.cancel:hover{
+	background-color: #FD8F24;
+	color: white;
 }
 /*模态框*/
 .modal_box>span{
@@ -269,6 +346,13 @@ span{
 	border-left: none;
 	padding-left: 0;
 }
+.font22{
+	font-size: 22px;
+}
+.m16{
+	margin: 16px 0 0 425px;
+}
+
 /*左边列表样式*/
 .font28{
 	padding: 55px 0 30px 42px;
@@ -333,6 +417,11 @@ p{
 }
 .mt45{
 	margin-top: 44px;
+}
+#caution{
+	color: red;
+	font-size: 16px;
+	text-align: center;
 }
 /*我的账号样式*/
 .list1{
