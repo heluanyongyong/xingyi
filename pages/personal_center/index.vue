@@ -22,11 +22,11 @@
 								</dd>
 								<dd>
 									<p><em>账号：</em><span>星移盒子</span></p>
-									<p><em>真实姓名：</em><span>星移盒子</span></p>
+									<p><em>实名认证：</em><span></span></p>
 								</dd>
 							    <dd>
-							    	<p><em>手机号码：</em><span>星移盒子</span></p>
-									<p><em>身份证号码：</em><span>星移盒子</span></p>
+							    	<p><em>手机号码：</em><span></span></p>
+									<p><em>星币：</em><span>0</span><span class="oranges ml20"><nuxt-link to="/on_recharge/" tag="span">充值</nuxt-link></span></p>
 							    </dd>
 							</dl>
 							<div class="listNone">
@@ -173,8 +173,9 @@
 				<p class="font22 grey">安全手机设置</p>
 				<span></span>
 				<p><input type="text" name="" placeholder="手机号码" disabled="disabled"></p>
-				<p><input type="text" name="" placeholder="验证码" class="numb">
-				   <button class="but">获取验证码</button>
+				<p class="clearfix">
+				   <input type="text" name="" placeholder="验证码" class="numb fl">
+				   <button class="but tc">获取验证码</button>
 				</p>
 				<p><button class="active1" @click="ifshow()">下一步</button></p>
 			</div>
@@ -187,7 +188,10 @@
 				<p class="font22 grey">安全手机设置</p>
 				<span></span>
 				<p><input type="text" name="" placeholder="新的手机号码"></p>
-				<p><input type="text" name="" placeholder="验证码" class="numb"><input type="button" name="" value="获取验证码" class="but"></p>
+				<p class="clearfix">
+					<input type="text" name="" placeholder="验证码" class="numb fl">
+					<button class="but tc">获取验证码</button>
+				</p>
 				<p><button class="active1" @click="fShow=!fShow">确定</button></p>
 			</div>
 		</div>
@@ -339,7 +343,7 @@ span{
    width: 248px;
 }
 .but{
-	width: 145px;
+	width: 150px;
 	height: 50px;
 	background-color: white;
 	color: #FD8F24;
@@ -424,6 +428,7 @@ p{
 	text-align: center;
 }
 /*我的账号样式*/
+.ml20{margin-left: 20px;}
 .list1{
   width: 818px;
 }
