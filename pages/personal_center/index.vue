@@ -17,7 +17,7 @@
 						<div>
 							<dl class="clearfix">
 								<dd class="use-img" @click="imgFalse=!imgFalse">
-									<img src="/personal_img/header.png">
+									<img src="/personal_img/header.png" class="w100">
 									<span class="change_img">更换头像</span>
 								</dd>
 								<dd>
@@ -145,7 +145,7 @@
         	<div class="useImg_box tc">
         		<p class="tr" @click="imgFalse=!imgFalse"><img src="/personal_img/down.png"></p>
         		<p class="font22 grey tl">更换头像</p>
-        		<span class="useImg_big"><img src="/personal_img/use_img.png"></span>
+        		<span class="useImg_big"><img src="/personal_img/use_img.png"  class="w100"></span>
         		<p><a href="javascript:"  class="oranges">上传头像</a></p>
         		<p>
         			<span class="cancel" @click="imgFalse=!imgFalse">取消</span>

@@ -181,8 +181,8 @@ h2{
 	margin-bottom: 70px;
 }
 .culture p{
-	font-size: 18px;
-	color: #333333;
+	font-size: 16px;
+	color: #666666;
 	margin-bottom: 5px;
 }
 .w580{

@@ -131,8 +131,12 @@
 					<table class="w100 margin">
 						<tbody>
 							<tr class="one">
-								<td>我的金元宝：</td>
-								<td><span>100</span></td>
+								<td>充值账号：</td>
+								<td class="item">
+                                    <input type="text" value="星移" disabled class="read2" required="required" @blur="textChange2()"><span @click="remove2()">更改帐号</span>
+                                    <em class="my">我的金元宝：</em>
+									<em class="asset">10000</em>
+								</td>
 							</tr>
 							<tr class="three">
 								<td>选择金额：</td>
@@ -218,11 +222,16 @@
 					<table class="w100 margin">
 						<tbody>
 							<tr class="one">
-								<td>充值账号：</td>
+								<!-- <td>充值账号：</td>
 								<td class="item">
                                     <input type="text" value="星移" disabled class="read2" required="required" @blur="textChange2()"><span @click="remove2()">更改帐号</span>
                                     <em class="my">我的金元宝：</em>
 									<em class="asset">10000</em>
+									<nuxt-link to="/on_recharge/record" tag="a" class="oranges ml40" @click="del(this)">充值记录</nuxt-link>
+								</td> -->
+								<td>我的金元宝：</td>
+								<td>
+									<span>100</span>
 									<nuxt-link to="/on_recharge/record" tag="a" class="oranges ml40" @click="del(this)">充值记录</nuxt-link>
 								</td>	
 							</tr>
@@ -266,6 +275,7 @@
 									<p class="other">
 										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textThree" placeholder="请输入整数值" @click="inputText()" @keyup="textThree()">
 									</p>
+
 								</td>
 							</tr>
 						</tbody>
