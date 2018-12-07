@@ -11,7 +11,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'shortcut icon', type: 'image/x-icon', href: 'logo.ico' }
+      { rel: 'shortcut icon', type: 'image/x-icon', href: 'favicon.ico' }
     ]
   },
   /*

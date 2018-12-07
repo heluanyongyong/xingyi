@@ -195,6 +195,7 @@ export default {
         $('.conter_ul>li').eq(index).siblings().children(".join_box").hide();
         $('.conter_ul>li').eq(index).siblings().find('img').attr('src','/about_img/down.png')
         $('.conter_ul>li').eq(index).siblings().children(".join_head").removeClass('bgGrey')
+         // $('.join_box').eq(index).slideToggle("slow")
       }
   }   
 }

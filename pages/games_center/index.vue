@@ -1,4 +1,4 @@
-<template>
+     <template>
     <div>
     	<no-ssr>
         	<swiper :options="swiperOption" class="swiper_container">

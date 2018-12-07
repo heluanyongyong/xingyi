@@ -685,4 +685,15 @@ table .bg_yes{
 	color: #FD8F24;
 	border-left: none;
 }
+
+
+
+/*向上三角*/
+.arrow-up{
+    width:0;
+    height:0;
+    border-left:30px solid transparent;
+    border-right:30px solid transparent;
+    border-bottom:30px solid #f00;
+}
 </style>
