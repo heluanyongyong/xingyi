@@ -57,10 +57,11 @@
 <script>
 export default {
   name: 'DownloadCenter',
-  head(){
-    return{
-      title:'下载中心'
-    }
+  head:{
+      title:'下载中心',
+      link: [
+        { rel: 'shortcut icon', type: 'image/x-icon', href: 'logo.ico' }
+      ]
   },
   mounted(){
     this.$wowinit();
