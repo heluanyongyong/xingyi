@@ -78,37 +78,37 @@ export default {
   .ma20{
     margin: 0 20%;
   }
-.logo_abs{
-  position: absolute;
-  left: 210px;
-  top: -80px;
-  z-index: 10;
-}
-.img1_abs{
-  position: absolute;
-  left: -185px;
-  bottom: -300px;
-}
-.img2_abs{
-  position: absolute;
-  left: -157px;
-  bottom: -192px;
-  z-index: 13;
-}
-.img3_abs{
-  position: absolute;
-  left: 40px;
-  z-index: 3;
-}
-.img4_abs{
-  position: absolute;
-  right: -635px;
-  bottom: -385px;
-  z-index: 13;
-}
-.mt192{
-  margin-top: 235px;
-}
+  .logo_abs{
+    position: absolute;
+    left: 210px;
+    top: -80px;
+    z-index: 10;
+  }
+  .img1_abs{
+    position: absolute;
+    left: -185px;
+    bottom: -300px;
+  }
+  .img2_abs{
+    position: absolute;
+    left: -157px;
+    bottom: -192px;
+    z-index: 13;
+  }
+  .img3_abs{
+    position: absolute;
+    left: 40px;
+    z-index: 3;
+  }
+  .img4_abs{
+    position: absolute;
+    right: -635px;
+    bottom: -385px;
+    z-index: 13;
+  }
+  .mt192{
+    margin-top: 235px;
+  }
   .app_abs{
     position: absolute;
     left: 80px;
