@@ -15,7 +15,7 @@
 							</ul>
 							<ul>
 								<li>更新时间：<span>2017-10-23</span></li>
-								<!-- <li>状态：<span>公测</span></li> -->
+								<li>状态：<span>公测</span></li>
 							</ul>
 						</div>
 						<div class="top1_right">
@@ -28,18 +28,21 @@
 					<ul>
 						<li><a href="javascript:void(0)" @click="change_list(0)" class="active">游戏介绍</a></li>
 						<li><a href="javascript:void(0)" @click="change_list(1)">特色玩法</a></li>
-						<li><a href="javascript:void(0)" @click="change_list(2)">技术亮点</a></li>
-						<li><a href="javascript:void(0)" @click="change_list(3)">角色设定</a></li>
+						<!-- <li><a href="javascript:void(0)" @click="change_list(2)">技术亮点</a></li> -->
+						<!-- <li><a href="javascript:void(0)" @click="change_list(3)">角色设定</a></li> -->
 					</ul>
 				</div>
 				<div class="game_content" ref="divs">
 					<!-- 游戏介绍 -->
 					<div class="info info1 active">
-						不羁少年柴朔风意外识破一场阴谋而引祸上身。绝处逢生的他竟成为「天命之人」，从此肩负起江湖血、天下命，开启仗剑豪情的侠客之路。游戏中具有高自由度任务由你探索、刺激实时战斗等你挑战、丰富支线剧情更将触发无数精彩奇遇，你的抉择将颠覆你的命运，改写不同结局。玩家可以任意游走于多条主线，挑战悬赏解谜，结识红颜知己、习得各派武功，每个抉择都可能颠覆命运，创造精采多重结局。是睥睨天下或淡入尘俗？唯有踏入江湖，剑写天命！
+						《寻宝达人》是一款多人在线益智类小游戏，玩家通过在游戏中进行“寻宝”可在游戏中获得金矿、抱回以及各种宝物，并且获得的物品可以在商城中进行回收
+						从而增加自己的财富值，与全服玩家和好友进行比拼。游戏会根据全服所有玩家的财富值进行排名。
 					</div>
 					<!-- 特色玩法 -->
 					<div class="info info2">
-						<ul class="ul_left">
+
+                       独特的游戏玩法，操作简单，点击屏幕即可获取物品，每次寻宝都能体验未知惊喜的游戏快感
+						<!-- <ul class="ul_left">
 							<li v-for="item in 3" :key="item">
 								<i></i>
 								<span>后起之秀</span>
@@ -53,14 +56,14 @@
 								<span>2018.10.23</span>
 							</li>
 						</ul>
-						<div class="clear"></div>
+						<div class="clear"></div> -->
 					</div>
 					<!-- 技术亮点 -->
-					<div class="info info3">
+					<!-- <div class="info info3">
 						不羁少年柴朔风意外识破一场阴谋而引祸上身。绝处逢生的他竟成为「天命之人」，从此肩负起江湖血、天下命，开启仗剑豪情的侠客之路。游戏中具有高自由度任务由你探索、刺激实时战斗等你挑战、丰富支线剧情更将触发无数精彩奇遇，你的抉择将颠覆你的命运，改写不同结局。玩家可以任意游走于多条主线，挑战悬赏解谜，结识红颜知己、习得各派武功，每个抉择都可能颠覆命运，创造精采多重结局。是睥睨天下或淡入尘俗？唯有踏入江湖，剑写天命！
-					</div>
+					</div> -->
 					<!-- 角色设定 -->
-					<div class="info info4">
+					<!-- <div class="info info4">
 						<a href="javascript:void(0)" class="pos_icon pos_left"><img @click="info4_img_prev" src="/games_list/left.png" alt=""></a>
 						<div class="info4_content">
 							<div class="info4_inner">
@@ -114,7 +117,7 @@
 						</div>
 						<a href="javascript:void(0)" class="pos_icon pos_right"><img @click="info4_img_next" src="/games_list/right.png" alt=""></a>
 						<div class="clear"></div>
-					</div>
+					</div> -->
 				</div>
 				<div class="bottom">
 					<ol class="imglist">
@@ -125,10 +128,10 @@
 					<div class="imgs_content">
 						<ul>
 							<li><img @click="click_img" src="/games_list/favor1.png" alt=""></li>
-							<li><img @click="click_img" src="/games_list/favor1.png" alt=""></li>
-							<li><img @click="click_img" src="/games_list/favor1.png" alt=""></li>
-							<li><img @click="click_img" src="/games_list/favor1.png" alt=""></li>
-							<li><img @click="click_img" src="/games_list/favor1.png" alt=""></li>
+							<li><img @click="click_img" src="/games_list/favor2.png" alt=""></li>
+							<li><img @click="click_img" src="/games_list/favor3.png" alt=""></li>
+							<li><img @click="click_img" src="/games_list/favor4.png" alt=""></li>
+							<li><img @click="click_img" src="/games_list/favor5.png" alt=""></li>
 						</ul>
 					</div>
 					<!-- 弹框 -->
@@ -217,7 +220,7 @@
 							color #FD8F24
 		.game_content
 			background #fff
-			font-size 14px
+			font-size 16px
 			.info
 				padding 28px 35px
 				display none
@@ -226,7 +229,7 @@
 			.info1,.info3
 				line-height 25px
 			.info2
-				padding 25px 35px 35px 35px
+				padding 35px 35px 35px 35px
 				ul
 					width 44%
 					&.ul_left

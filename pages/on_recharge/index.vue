@@ -1,5 +1,5 @@
 <template>
-	<div class="bgColor ptb3" @click="a()">
+	<div class="bgColor ptb3" @click="isShow=false">
 		<!-- 头部导航 -->
 		<div class="clearfix head_box container">
 			<img src="/recharge_img/banner.png">
@@ -32,20 +32,29 @@
 							</tr>
 							<tr class="two">
 								<td>充值游戏：</td>
-								<td>						
-									<div class="dis" @click="isShow=!isShow">
+								<td>	
+								   	<!-- 选择游戏 -->
+									<div class="dis rel" @click.stop="isShow=!isShow">
+										<div class="select_box">
+											<span class="oranges game">请选择游戏</span>
+			                                <em class="border"></em>
+										</div>
+										<!-- <img src="/recharge_img/img.png" class="abs_select"  v-show="isShow"> -->
+										<ul class="abs_select" v-show="isShow">
+											<li @click="selectGame(0)">
+												<img src="/recharge_img/game.png" class="mid">
+												<span>寻宝达人</span>
+											</li>
+										</ul>
+										<img src="/recharge_img/triangle.png" class="abs_triangle" v-show="isShow">
+									</div>
+									<!-- 选择服区 -->
+									<!-- <div class="dis ml40">
 										<div class="select_box">
 											<span class="oranges">请选择游戏</span>
 			                                <em class="border"></em>
 										</div>
-										<img src="/recharge_img/img.png" class="abs_select"  v-show="isShow">
-									</div>
-									<div class="dis ml40">
-										<div class="select_box">
-											<span class="oranges">请选择游戏</span>
-			                                <em class="border"></em>
-										</div>
-									</div>
+									</div> -->
 								</td>
 							</tr>
 							<tr class="three">
@@ -78,7 +87,7 @@
 							<tr class="four">
 								<td>支付方式：</td>
 							    <td class="tabTit">
-							    	<button @click="tabChange(0)" class="bg_yes">微信支付</button>
+							    	<button @click="tabChange(0)">微信支付</button>
 							    	<button @click="tabChange(1)">支付宝支付</button>
 							    	<button @click="tabChange(2)">网银支付</button>
 							    	<nuxt-link to="/on_recharge/record" tag="a" class="oranges">充值记录</nuxt-link>
@@ -86,6 +95,8 @@
 							</tr>
 						</tbody>
 					</table>
+					<!-- 未选择游戏时的提示文字 -->
+					<div class="gameHint tc ptb3 oranges"></div>
 					<ul class="tc tabBd">
 						<!-- 微信支付 -->
 						<li class="none">
@@ -169,7 +180,7 @@
 							<tr class="four">
 								<td>支付方式：</td>
 							    <td class="tabTit">
-							    	<button @click="tabChange(3)" class="bg_yes">微信支付</button>
+							    	<button @click="tabChange(3)">微信支付</button>
 							    	<button @click="tabChange(4)">支付宝支付</button>
 							    	<button @click="tabChange(5)">网银支付</button>
 							    	<nuxt-link to="/on_recharge/record" tag="a" class="oranges">充值记录</nuxt-link>
@@ -238,19 +249,28 @@
 							<tr class="two">
 								<td>充值游戏：</td>
 								<td>						
-									<div class="dis" @click="isShow=!isShow">
+									<!-- 选择游戏 -->
+									<div class="dis rel" @click.stop="isShow=!isShow">
+										<div class="select_box">
+											<span class="oranges game">请选择游戏</span>
+			                                <em class="border"></em>
+										</div>
+										<!-- <img src="/recharge_img/img.png" class="abs_select"  v-show="isShow"> -->
+										<ul class="abs_select" v-show="isShow">
+											<li @click="selectGame(0)">
+												<img src="/recharge_img/game.png" class="mid">
+												<span>寻宝达人</span>
+											</li>
+										</ul>
+										<img src="/recharge_img/triangle.png" class="abs_triangle" v-show="isShow">
+									</div>
+									<!-- 选择服区 -->
+									<!-- <div class="dis ml40">
 										<div class="select_box">
 											<span class="oranges">请选择游戏</span>
 			                                <em class="border"></em>
 										</div>
-										<img src="/recharge_img/img.png" class="abs_select"  v-show="isShow">
-									</div>
-									<div class="dis ml40">
-										<div class="select_box">
-											<span class="oranges">请选择游戏</span>
-			                                <em class="border"></em>
-										</div>
-									</div>
+									</div> -->
 								</td>
 							</tr>
 							<tr class="three">
@@ -280,7 +300,9 @@
 							</tr>
 						</tbody>
 					</table>
-					<div class="tc"><button id="but">立即充值</button></div>
+					<!-- 未选择游戏时的提示文字 -->
+					<div class="gameHint tc ptb3 oranges"></div>
+					<div class="tc" @click="nowRecharge()"><button id="but">立即充值</button></div>
 				</div>
 			</div>
 			<!-- 提示 -->
@@ -317,11 +339,10 @@ export default {
     }
   },
   methods:{
-  	// 图片的出现和隐藏
-  	a(){
-       if($('.abs_select').is(":visible")){
-            $('.abs_select').hide()
-        }
+  	// 选择游戏
+  	selectGame(index){
+  		$('.game').text($('.abs_select>li').children('span').text())
+        $('.gameHint').hide()
   	},
   	// 头部导航切换
     headChange(index){
@@ -382,8 +403,12 @@ export default {
     },
     // 支付方式切换
   	tabChange(index){
-        $('.tabTit>button').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
-        $(".tabBd>li").hide().eq(index).show();      
+       if ($('.game').text()=="请选择游戏") {
+       	$('.gameHint').text('请选择游戏')
+       }else{
+       	$('.tabTit>button').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
+        $(".tabBd>li").hide().eq(index).show();
+       }         
   	},
   	// 充值到游戏输入框
   	textOne(){
@@ -438,12 +463,20 @@ export default {
 		// 对输入带小数点的值向下取整
 		$(".textThree").val(Math.floor($(".textThree").val()))
 		console.log(item.value)
+  	},
+  	// 金元宝充值到游戏-立即充值
+  	nowRecharge(){
+       if ($('.game').text()=="请选择游戏") {
+       	$('.gameHint').text('请选择游戏')
+       	console.log(222)
+       }
   	}
   }			
 }
 </script>
 
 <style scoped>
+/*头部切换*/
 .head_ul .b{
 	display: block;
 }
@@ -472,27 +505,44 @@ export default {
   display: inline-block;
 }
 .select_box{
-	width: 253px;
+	width: 273px;
 	line-height: 55px;
     border: 1px solid #FD8F24;
     border-radius: 5px;
     padding-left: 20px;
     font-size: 18px;
     margin: 0;
-    position: relative;
+/*    position: relative;*/
     background: url(/recharge_img/down.png) no-repeat right 15px center;
     cursor:pointer;
 }
 .abs_select{
+	padding: 10px;
+	border: 1px solid rgba(220,220,220,1);
+	background-color: rgba(255,255,255,1);
 	position: absolute;
-	bottom: 16px;
+	bottom: -65px;
+	box-shadow:0px 3px 7px 0px rgba(0, 0, 0, 0.35)
+}
+.abs_select>li{
+	width: 253px;
+	color: #333;
+	font-size: 18px;
+}
+.abs_select>li:hover{
+	color: #FD8F24;
+}
+.abs_triangle{
+	position: absolute;
+	left: 50px;
+    bottom: -17px
 }
 .border{
 	display: inline-block;
 	width: 1px;
 	height: 30px;
 	background:rgba(253,143,36,1);
-	margin: 0 0 -8px 73px;
+	margin: 0 0 -8px 100px;
 }
 .ml40{
 	margin-left: 40px;
@@ -536,6 +586,9 @@ input{
 	border: 1px solid #DBDBDB;
 	line-height: 48px;
 	width: 206px;	
+}
+.read,.read2{
+	height: 48px;
 }
 button{
 	width: 155px;

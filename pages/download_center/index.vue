@@ -1,15 +1,15 @@
 <template>
   <div>
     <!-- 一 -->
-    <div  class="download_bgimg1" @load="loading()">
-      <div class="pt5 clearfix ma20">
+    <div  class="download_bgimg1 " @load="loading()">
+      <div class="pt5 clearfix container">
         <!-- 左边盒子 -->
         <div class="tc wow fadeIn clearfix fl mt192 rel" data-wow-duration="6s">
              <img src="/down_img/img1.png" class="img1_abs fl animate-bounce-down1">
              <img src="/down_img/img2.png" class="img2_abs fl animate-bounce-down2">
              <img src="/down_img/logo.png" class="logo_abs animate-bounce-down">
              <img src="/down_img/img3.png" class="img3_abs">
-             <img src="/down_img/img4.png" class="img4_abs animate-bounce-down3">
+             <img src="/down_img/img4.png" class="img4_abs animate-bounce-down1">
         </div>
         <!-- 右边盒子 -->
         <div class="fr">
@@ -150,17 +150,6 @@ export default {
     margin: 190px 0 92px 0;
   }
   /*上下移动动画*/
-  @-webkit-keyframes bounce-down {
-      25% {
-          -webkit-transform: translateY(-4px);
-      }
-      /*50%, 100% {
-          -webkit-transform: translateY(0);
-      }*/
-      75% {
-          -webkit-transform: translateY(4px);
-      }
-  }
   @keyframes bounce-down {
       25% {
           transform: translateY(-4px);
@@ -169,47 +158,65 @@ export default {
           transform: translateY(4px);
       }
   }
-  .animate-bounce-down{
-      -webkit-animation: bounce-down 2.2s linear infinite;
-      animation: bounce-down 2.2s linear infinite;
-  }
-  .animate-bounce-down1{
-      -webkit-animation: bounce-down 2.8s linear infinite;
-      animation: bounce-down 2.8s linear infinite;
-  }
-  .animate-bounce-down2{
-      -webkit-animation: bounce-down 2.6s linear infinite;
-      animation: bounce-down 2.6s linear infinite;
-  }
-  .animate-bounce-down3{
-      -webkit-animation: bounce-down 2.8s linear infinite;
-      animation: bounce-down 2.8s linear infinite;
-  }
-  @-webkit-keyframes bounce-up {
+  @-webkit-keyframes bounce-down {
       25% {
-          -webkit-transform: translateY(10px);
-      }
-      50%, 100% {
-          -webkit-transform: translateY(0);
+          -webkit-transform: translateY(-4px);
       }
       75% {
-          -webkit-transform: translateY(-10px);
+          -webkit-transform: translateY(4px);
+      }
+  }
+  @-moz-keyframes bounce-down {
+      25% {
+          -moz-transform: translateY(-4px);
+      }
+      75% {
+          -moz-transform: translateY(4px);
       }
   }
   @keyframes bounce-up {
       25% {
-          transform: translateY(10px);
-      }
-      50%, 100% {
-          transform: translateY(0);
+          transform: translateY(4px);
       }
       75% {
-          transform: translateY(-10px);
+          transform: translateY(-4px);
       }
   }
+  @-webkit-keyframes bounce-up {
+      25% {
+          -webkit-transform: translateY(4px);
+      }
+      75% {
+          -webkit-transform: translateY(-4px);
+      }
+  }
+  @-moz-keyframes bounce-up {
+      25% {
+          -moz-transform: translateY(4px);
+      }
+      75% {
+          -moz-transform: translateY(-4px);
+      }
+  }
+  .animate-bounce-down{
+      animation: bounce-down 2.2s linear infinite;
+      -webkit-animation: bounce-down 2.2s linear infinite;
+      -moz-animation: bounce-down 2.8s linear infinite;
+  }
+  .animate-bounce-down1{
+      animation: bounce-down 2.8s linear infinite;
+      -webkit-animation: bounce-down 2.8s linear infinite;
+      -moz-animation: bounce-down 3.2s linear infinite;
+  }
+  .animate-bounce-down2{
+      animation: bounce-down 2.6s linear infinite;
+      -webkit-animation: bounce-down 2.6s linear infinite;
+      -moz-animation: bounce-down 3.0s linear infinite;
+  }
   .animate-bounce-up{
-      -webkit-animation: bounce-up 1.8s linear infinite;
       animation: bounce-up 1.8s linear infinite;
+      -webkit-animation: bounce-up 1.8s linear infinite;
+      -moz-animation: bounce-up 2.2s linear infinite;
   }
   .rel{
     position: relative;

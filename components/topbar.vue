@@ -37,8 +37,8 @@
 				<div class="game_list">
 					<ul>
 						<li>
-							<div class="top"><nuxt-link @click.native="change_list(0)" to="/games_center">游戏中心</nuxt-link></div>
-							<div class="bottom"><nuxt-link @click.native="change_list(0)" to="/games_center">游戏中心</nuxt-link></div>
+							<div class="top"><nuxt-link @click.native="change_list(0)" to="/games_center/one_game">游戏中心</nuxt-link></div>
+							<div class="bottom"><nuxt-link @click.native="change_list(0)" to="/games_center/one_game">游戏中心</nuxt-link></div>
 						</li>
 						<li>
 							<div class="top"><nuxt-link @click.native="change_list(1)" to="/download_center">下载中心</nuxt-link></div>
