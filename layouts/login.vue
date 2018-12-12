@@ -12,7 +12,7 @@
 	min-width 1250px
 .loginmain
 	height 780px
-	padding 100px 0
+	padding 150px 0
 	background-size 100% 100% !important
 </style>
 

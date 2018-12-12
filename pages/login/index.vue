@@ -3,13 +3,14 @@
     	<div class="container">
     		<div class="login_div">
     			<ul class="login_top">
-    				<li><a href="javascript:void(0)" @click="change_logintype(0)" class="active">密码登录</a></li>
-    				<li><a href="javascript:void(0)" @click="change_logintype(1)">短信登录</a></li>
+    				<!-- <li><a href="javascript:void(0)" @click="change_logintype(0)" class="active">密码登录</a></li> -->
+    				<li><a href="javascript:void(0)" @click="change_logintype(0)" class="active">帐号登录</a></li>
+    				<!-- <li><a href="javascript:void(0)" @click="change_logintype(1)">短信登录</a></li> -->
     			</ul>
     			<div class="login_center">
     				<!-- 密码登录 -->
     				<div class="login_top_content active">
-    					<input class="input_text" type="text" placeholder="手机号/邮箱">
+    					<input class="input_text" type="text" placeholder="帐号">
     					<input class="input_text" type="text" placeholder="密码" v-model="password">
     				</div>
     				<!-- 短信登录 -->
@@ -35,12 +36,12 @@
     					<span class="as_right">
     						<nuxt-link to="/forget_password/phone_get">忘记密码</nuxt-link>
     						<a>|</a>
-    						<nuxt-link to="/login/register">注册</nuxt-link>
+    						<nuxt-link to="/login/phone_bind">注册</nuxt-link>
     					</span>
     					<div class="clear"></div>
     				</div>
     			</div>
-    			<div class="login_bottom">
+    			<!-- <div class="login_bottom">
     				<span class="title">第三方登录</span>
     				<ul>
     					<li><img src="/login/qq.png" alt=""></li>
@@ -49,7 +50,7 @@
     					<li><img src="/login/weixing.png" alt=""></li>
     				</ul>
     				<div class="clear"></div>
-    			</div>
+    			</div> -->
     		</div>
     		<div class="clear"></div>
     	</div>
@@ -63,6 +64,7 @@ input:hover
 .login_div
 	float right
 	public_login_container()
+	padding 50px !important
 	.login_top
 		height 55px
 		li

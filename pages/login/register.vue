@@ -7,16 +7,16 @@
 					<span class="span_right">已有帐号？<nuxt-link to="/login" class="active">立即登录</nuxt-link></span>
 				</div>
 				<div class="register_content">
-					<input class="input_text" type="text" placeholder="请输入帐号">
+					<input class="input_text" type="text" placeholder="请输入昵称">
 					<input class="input_text" type="text" placeholder="请输入密码">
 					<input class="input_text" type="text" placeholder="再次确认密码">
 					<input class="input_text" type="text" placeholder="请输入真实姓名">
 					<input class="input_text" type="text" placeholder="请输入身份证号码">
+					<input class="input_text" type="text" placeholder="邀请人ID号(选填)">
 					<div class="check_read">
 						<input type="checkbox" class="input_checkbox">
 						<span class="agree">我已同意</span><span class="sign">《</span><nuxt-link to="/login/agreement" class="active">星移网络用户服务协议和用户隐私政策</nuxt-link><span class="sign">》</span>
 					</div>
-					<button  class="button_active" @click="check_register">注册</button>
 				</div>
 			</div>
 		</div>
@@ -26,6 +26,8 @@
 @import '~assets/public.styl'
 input:hover
 	border 1px solid #FD8F24
+.container
+	margin-top -95px !important
 .register_div
 	public_login_container()
 	.register_top
@@ -57,11 +59,6 @@ export default{
 	head(){
 		return{
 			title:'注册'
-		}
-	},
-	methods:{
-		check_register(){
-			this.$router.push('/login/phone_bind');
 		}
 	}
 }

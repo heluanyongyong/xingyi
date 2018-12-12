@@ -4,12 +4,15 @@
 			<div class="phonebind_div">
 				<div class="phonebind_top">绑定手机号码</div>
 				<div class="phonebind_center">
-					<input class="input_text" type="text" placeholder="手机号码">
-					<input class="input_text middle_input" type="text" placeholder="验证码">
+					<input v-model="phone" class="input_text" type="text" placeholder="手机号码">
+					<input v-if="imgRegister" class="input_text middle_input" type="text" placeholder="图片验证码">
+	    			<img v-if="imgRegister" class="middle_button">
+	    			<input class="input_text middle_input" type="text" placeholder="短信验证码">
 	    			<button class="middle_button">获取验证码</button>
 	    			<div class="clear"></div>
 				</div>
-    			<model msg="恭喜您成功注册星移帐号" btn="我知道了" name="确定"></model>
+				<button  class="button_active" @click="check_register">下一步</button>
+    			<!-- <model msg="恭喜您成功注册星移帐号" btn="我知道了" name="确定"></model> -->
 			</div>
 		</div>
 	</div>
@@ -56,16 +59,29 @@ export default{
 			title:'绑定手机'
 		}
 	},
+	created(){
+		
+	},
 	data() {
     	return{
-    		
+    		phone:'',//手机号码
+    		imgRegister:true,//图片验证码默认不显示
     	}
     },
 	methods:{
-		
+		check_register(){
+			this.$router.push('/login/register');
+		}
 	},
 	components:{
 		model
+	},
+	watch:{
+		phone(){
+			if(this.phone.length==11){
+				// this.imgRegister=true;
+			}
+		}
 	}
 }
 </script>
