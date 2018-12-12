@@ -27,7 +27,7 @@
 							<tr class="one">
 								<td>充值账号：</td>
 								<td>
-                                    <input type="text" value="星移" disabled class="read" required="required" @blur="textChange()"><span @click="remove()">更改帐号</span>
+                                    <input type="text" value="星移" disabled class="read" required="required" @blur="textChange('.read')"><span @click="remove('.read')">更改帐号</span>
 								</td>
 							</tr>
 							<tr class="two">
@@ -36,12 +36,12 @@
 								   	<!-- 选择游戏 -->
 									<div class="dis rel" @click.stop="isShow=!isShow">
 										<div class="select_box">
-											<span class="oranges game">请选择游戏</span>
+											<span class="oranges game1">请选择游戏</span>
 			                                <em class="border"></em>
 										</div>
 										<!-- <img src="/recharge_img/img.png" class="abs_select"  v-show="isShow"> -->
-										<ul class="abs_select" v-show="isShow">
-											<li @click="selectGame(0)">
+										<ul class="abs_select select1" v-show="isShow">
+											<li @click="selectGame(0,'.select1','.game1')">
 												<img src="/recharge_img/game.png" class="mid">
 												<span>寻宝达人</span>
 											</li>
@@ -80,23 +80,23 @@
 										<span @click="chooseMoney(13)">1314</span>
 									</p>
 									<p class="other">
-										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textOne" @click="inputText()" placeholder="请输入整数值" @keyup="textOne()">
+										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textOne" @click="inputText()" placeholder="请输入整数值" @keyup="moneyChange('.textOne')">
 									</p>
 								</td>
 							</tr>
 							<tr class="four">
 								<td>支付方式：</td>
 							    <td class="tabTit">
-							    	<button @click="tabChange(0)">微信支付</button>
-							    	<button @click="tabChange(1)">支付宝支付</button>
-							    	<button @click="tabChange(2)">网银支付</button>
+							    	<button @click="tabChange(0,'.game1')">微信支付</button>
+							    	<button @click="tabChange(1,'.game1')">支付宝支付</button>
+							    	<button @click="tabChange(2,'.game1')">网银支付</button>
 							    	<nuxt-link to="/on_recharge/record" tag="a" class="oranges">充值记录</nuxt-link>
 							    </td>
 							</tr>
 						</tbody>
 					</table>
 					<!-- 未选择游戏时的提示文字 -->
-					<div class="gameHint tc ptb3 oranges"></div>
+					<div class="gameHint tc ptb3 oranges none">请选择游戏</div>
 					<ul class="tc tabBd">
 						<!-- 微信支付 -->
 						<li class="none">
@@ -144,13 +144,16 @@
 							<tr class="one">
 								<td>充值账号：</td>
 								<td class="item">
-                                    <input type="text" value="星移" disabled class="read2" required="required" @blur="textChange2()"><span @click="remove2()">更改帐号</span>
+                                    <input type="text" value="星移" disabled class="read2" required="required" @blur="textChange('.read2')"><span @click="remove('.read2')">更改帐号</span>
                                     <em class="my">我的金元宝：</em>
 									<em class="asset">10000</em>
 								</td>
 							</tr>
 							<tr class="three">
-								<td>选择金额：</td>
+								<td>
+									<div>选择金额：</div>
+                                    <div>(单位/元)</div>
+                                </td>
 								<td>
 									<p>
 										<span @click="chooseMoney(14)">10</span>
@@ -169,7 +172,7 @@
 										<span @click="chooseMoney(27)">1314</span>
 									</p>
 									<p class="other">
-										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textTwo" @click="inputText()" placeholder="请输入整数值" @keyup="textTwo()">
+										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textTwo" @click="inputText()" placeholder="请输入整数值" @keyup="moneyChange('.textTwo')">
 									</p>
 								</td>
 							</tr>
@@ -252,12 +255,12 @@
 									<!-- 选择游戏 -->
 									<div class="dis rel" @click.stop="isShow=!isShow">
 										<div class="select_box">
-											<span class="oranges game">请选择游戏</span>
+											<span class="oranges game2">请选择游戏</span>
 			                                <em class="border"></em>
 										</div>
 										<!-- <img src="/recharge_img/img.png" class="abs_select"  v-show="isShow"> -->
-										<ul class="abs_select" v-show="isShow">
-											<li @click="selectGame(0)">
+										<ul class="abs_select select2" v-show="isShow">
+											<li @click="selectGame(0,'.select2','.game2')">
 												<img src="/recharge_img/game.png" class="mid">
 												<span>寻宝达人</span>
 											</li>
@@ -293,7 +296,7 @@
 										<span @click="chooseMoney(41)">1314</span>
 									</p>
 									<p class="other">
-										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textThree" placeholder="请输入整数值" @click="inputText()" @keyup="textThree()">
+										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textThree" placeholder="请输入整数值" @click="inputText()" @keyup="moneyChange('.textThree')">
 									</p>
 
 								</td>
@@ -301,8 +304,8 @@
 						</tbody>
 					</table>
 					<!-- 未选择游戏时的提示文字 -->
-					<div class="gameHint tc ptb3 oranges"></div>
-					<div class="tc" @click="nowRecharge()"><button id="but">立即充值</button></div>
+					<div class="gameHint tc ptb3 oranges none">请选择游戏</div>
+					<div class="tc" @click="nowRecharge('.game2')"><button id="but">立即充值</button></div>
 				</div>
 			</div>
 			<!-- 提示 -->
@@ -340,8 +343,10 @@ export default {
   },
   methods:{
   	// 选择游戏
-  	selectGame(index){
-  		$('.game').text($('.abs_select>li').children('span').text())
+  	selectGame(index,perent,child){
+  		var perent=$(""+perent)
+  		var child=$(""+child)
+  		child.text(perent.children('li').eq(index).children('span').text())
         $('.gameHint').hide()
   	},
   	// 头部导航切换
@@ -350,34 +355,22 @@ export default {
     	$(".head_ul>li").children('div').hide().eq(index).show();
     	$(".recharge_box>div").hide().eq(index).show();
     },
-  	// 充值到游戏：点击span移除输入框的禁用属性并改变span标签颜色
-  	remove(){
-  		var text=$(".read").val()
-  		$(".read").removeAttr("disabled").val('').focus().val(text).siblings().css("color","#999");
+  	// 点击span移除输入框的禁用属性并改变span标签颜色
+  	remove(name){
+  		var name=$(""+name);
+  		var text=name.val()
+  		name.removeAttr("disabled").val('').focus().val(text).siblings().css("color","#999");
   	},
-  	// 金元宝充值到游戏
-  	remove2(){
-  		var text2=$(".read2").val()
-  		$(".read2").removeAttr("disabled").val('').focus().val(text2).siblings("span").css("color","#999");
-  	},
-  	// 充值到游戏：充值账号的内容被修改
-  	textChange(){
+  	// 充值账号的内容被修改
+  	textChange(name){
+  		var name=$(""+name);
   		// 当内容为空时
-  		if ($(".read").val()==="") {
+  		if (name.val()==="") {
   		  //移除输入框的禁用属性，改变span的提示内容 
-  		  $(".read").removeAttr("disabled").siblings().text("请完善账号").css("color","#FD8F24");
+  		  name.removeAttr("disabled").siblings('span').text("请完善账号").css("color","#FD8F24");
   		}
   		else {
-  		  $(".read").attr("disabled","disabled").siblings().text("更改帐号").css("color","#FD8F24");
-  		}
-  	},
-  	// 金元宝充值到游戏
-  	textChange2(){
-  		if ($(".read2").val()==="") {
-  		  $(".read2").removeAttr("disabled").siblings("span").text("请完善账号").css("color","#FD8F24");
-  		}
-  		else {
-  		  $(".read2").attr("disabled","disabled").siblings("span").text("更改帐号").css("color","#FD8F24");
+  		  name.attr("disabled","disabled").siblings('span').text("更改帐号").css("color","#FD8F24");
   		}
   	},
     // 额度选择状态
@@ -402,72 +395,47 @@ export default {
         $('.other').css("border","1px solid #FD8F24")
     },
     // 支付方式切换
-  	tabChange(index){
-       if ($('.game').text()=="请选择游戏") {
-       	$('.gameHint').text('请选择游戏')
+  	tabChange(index,name){
+  		var name=$(""+name)
+  		// 当充值游戏未选择时
+       if (name.text()=="请选择游戏") {
+       	// 显示文字提示
+       	$('.gameHint').show()
        }else{
        	$('.tabTit>button').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
         $(".tabBd>li").hide().eq(index).show();
+        $('.gameHint').hide()
        }         
   	},
-  	// 充值到游戏输入框
-  	textOne(){
+  	// 其他金额输入框
+  	moneyChange(name){
+  		var name=$(""+name);
        // 其他金额输入框的要求 仅数字
-		var reg = $(".textOne").val().match(/\d+\.?\d{0,10}/);
+		var reg = name.val().match(/\d+\.?\d{0,10}/);
 		// 当输入值不为空
 		if (reg!=null) {
 			// 支付额度获取输入的值并向下取整
-			$(".orange").text(Math.floor($(".textOne").val())+".00")
-			// 当支付额度不为0或输入值为NaN时
-          if ($(".orange").text()===0 || $(".textOne").val()==="NaN" || $(".textOne").val()<=0) {
-          	// 清空输入值，支付额度为0，显示手机图片
-          	$(".textOne").val("")
-			$(".orange").text("0")
-          	$(".imgA").attr("src","/recharge_img/phone.png")
-          }else{
-          	$(".imgA").attr("src","/recharge_img/ewm.png")
-          }
-		}else{
-			$(".textOne").val("")
-			$(".orange").text("0")
-			$(".imgA").attr("src","/recharge_img/phone.png")
-		}
-  	},
-  	// 充值到金元宝输入框
-  	textTwo(){
-       // 其他金额输入框的要求 仅数字
-		var reg = $(".textTwo").val().match(/\d+\.?\d{0,10}/);
-		// 当输入值不为空
-		if (reg!=null) {
-			// 支付额度获取输入的值并向下取整
-			$(".orange").text(Math.floor($(".textTwo").val())+".00")
+			$(".orange").text(Math.floor(name.val())+".00")
 			// 当支付额度为0或输入值为NaN时
-          if ($(".orange").text()===0 || $(".textTwo").val()==="NaN" || $(".textTwo").val()<=0) {
+          if ($(".orange").text()===0 || name.val()==="NaN" || name.val()<=0) {
           	// 清空输入值，支付额度为0，显示手机图片
-          	$(".textTwo").val("")
+          	name.val("")
 			$(".orange").text("0")
           	$(".imgA").attr("src","/recharge_img/phone.png")
           }else{
           	$(".imgA").attr("src","/recharge_img/ewm.png")
           }	
 		}else{
-			$(".textTwo").val("")
+			name.val("")
 			$(".orange").text("0")
 			$(".imgA").attr("src","/recharge_img/phone.png")
 		}
   	},
-  	// 金元宝充值到游戏输入框
-  	textThree(){
-       // 其他金额输入框的要求 仅数字
-		var reg = $(".textThree").val().match(/\d+\.?\d{0,10}/);
-		// 对输入带小数点的值向下取整
-		$(".textThree").val(Math.floor($(".textThree").val()))
-		console.log(item.value)
-  	},
   	// 金元宝充值到游戏-立即充值
-  	nowRecharge(){
-       if ($('.game').text()=="请选择游戏") {
-       	$('.gameHint').text('请选择游戏')
+  	nowRecharge(name){
+  	   var name=$(""+name);
+       if (name.text()=="请选择游戏") {
+       	$('.gameHint').show()
        	console.log(222)
        }
   	}
@@ -517,14 +485,17 @@ export default {
     cursor:pointer;
 }
 .abs_select{
-	padding: 10px;
 	border: 1px solid rgba(220,220,220,1);
+	padding: 10px;
 	background-color: rgba(255,255,255,1);
 	position: absolute;
-	bottom: -65px;
-	box-shadow:0px 3px 7px 0px rgba(0, 0, 0, 0.35)
+	top: 72px;
+	box-shadow:0px 3px 7px 0px rgba(0, 0, 0, 0.35);
 }
 .abs_select>li{
+    height: 40px;
+   
+    line-height: 40px;
 	width: 253px;
 	color: #333;
 	font-size: 18px;
@@ -542,7 +513,8 @@ export default {
 	width: 1px;
 	height: 30px;
 	background:rgba(253,143,36,1);
-	margin: 0 0 -8px 100px;
+	margin: 13px 52px 0 0;
+	float: right;
 }
 .ml40{
 	margin-left: 40px;

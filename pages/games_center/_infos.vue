@@ -8,7 +8,7 @@
 							<img src="/games_list/games1.png" alt="">
 						</div>
 						<div class="top1_center">
-							<h3 class="title">天命奇御</h3>
+							<h3 class="title">寻宝达人</h3>
 							<ul>
 								<li>在线人数：<span>123456</span></li>
 								<li>游戏类型：<span>角色</span></li>
@@ -40,7 +40,6 @@
 					</div>
 					<!-- 特色玩法 -->
 					<div class="info info2">
-
                        独特的游戏玩法，操作简单，点击屏幕即可获取物品，每次寻宝都能体验未知惊喜的游戏快感
 						<!-- <ul class="ul_left">
 							<li v-for="item in 3" :key="item">

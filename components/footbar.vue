@@ -8,7 +8,7 @@
 	    		</ul>
 	    		<div class="clear"></div> -->
 	    		<ul class="nav_list">
-	    			<li><a href="javascript:void(0);">产品中心</a></li>
+	    			<li><a href="javascript:void(0);">游戏中心</a></li>
 	    			<li>|</li>
 	    			<li><a href="javascript:void(0);">下载中心</a></li>
 	    			<li>|</li>
