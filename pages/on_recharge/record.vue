@@ -169,17 +169,17 @@ export default {
 	padding: 50px 46px 50px 60px;
 }
 .mb33{
-	margin-bottom: 33px;
+	margin-bottom: 24px;
 }
 .box{
 	height: 52px;
 }
 .top_ul li{
 	float: left;
-	font-size: 22px;
+	font-size: 20px;
 	color: #999;
 	margin-right: 133px;
-	padding-bottom: 16px;
+	padding-bottom: 18px;
 }
 .top_ul li:hover{
 	color: #FD8F24;
