@@ -119,30 +119,42 @@ export default{
 			}
 		},
 		check_register(){
-			this.$axios.post('http://192.168.108.24:4546/user/SMSVerification',{
-				"phone":this.phone,
-				"SMSCode":this.messageRegister,
-				"requestType":"xyGameRequest"
-			}).then((res)=>{
-				if(res.data.code!=200){
-					$('.info2').css('color','#FF4747');
-					this.info2=res.data.msg;
-				}else{
-					$('.info2').css('color','green');
-					this.info2='手机号码验证成功,2秒后跳转到注册页面'
-					setTimeout(()=>{
-						this.$router.push({
-							path:'/login/register',
-							query:{
-								phone:this.phone,
-								code:this.messageRegister
-							}
-						});
-					},2000);
-				}
-			}).catch((err)=>{
-				console.log(err);
-			});
+			// 前端验证
+			var msg='';
+			if(this.phone.length!=11){
+				msg+=' 手机号码格式有误 ';
+			}
+			if(this.messageRegister==''){
+				msg+=' 验证码不能为空 ';
+			}
+			if(msg!=''){
+				this.info2=msg;
+			}else{
+				this.$axios.post('http://192.168.108.24:4546/user/SMSVerification',{
+					"phone":this.phone,
+					"SMSCode":this.messageRegister,
+					"requestType":"xyGameRequest"
+				}).then((res)=>{
+					if(res.data.code!=200){
+						$('.info2').css('color','#FF4747');
+						this.info2=res.data.msg;
+					}else{
+						$('.info2').css('color','green');
+						this.info2='手机号码验证成功,2秒后跳转到注册页面'
+						setTimeout(()=>{
+							this.$router.push({
+								path:'/login/register',
+								query:{
+									phone:this.phone,
+									code:this.messageRegister
+								}
+							});
+						},2000);
+					}
+				}).catch((err)=>{
+					console.log(err);
+				});
+			}
 		}
 	},
 	watch:{

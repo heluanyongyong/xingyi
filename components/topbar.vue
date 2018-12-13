@@ -7,7 +7,7 @@
 					<li v-if="account!='true'">
 						<nuxt-link to="/login">登录</nuxt-link>
 						 | 
-						<nuxt-link to="/login/register">注册</nuxt-link>
+						<nuxt-link to="/login/phone_bind">注册</nuxt-link>
 					</li>
 					<li v-if="account=='true'">
 						<img class="img1" src="/games_center/pic1.png" alt="" @click="$router.push('/personal_center')">
@@ -219,6 +219,13 @@ export default{
 		logout(){
 			sessionStorage.setItem('account',"");
 			this.$router.push('/download_center');
+			// this.$axios.post('/http://192.168.108.24:4546/user/logOut',{
+
+			// }).then((res)=>{
+
+			// }).catch((err)=>{
+			// 	console.log(err);
+			// });
 			window.location.reload();
 		},
 		change_list(index){
