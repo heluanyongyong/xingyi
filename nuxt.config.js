@@ -57,6 +57,10 @@ module.exports = {
     {
       src: '~plugins/vue-swiper',
       ssr: false
+    },
+    {
+      src:'~plugins/vue-axios',
+      ssr:false
     }
   ],
   css: [

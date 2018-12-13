@@ -10,7 +10,7 @@
 						<div class="top1_center">
 							<h3 class="title">寻宝达人</h3>
 							<ul>
-								<li>在线人数：<span>123456</span></li>
+								<li>玩家人数：<span>123456</span></li>
 								<li>游戏类型：<span>角色</span></li>
 							</ul>
 							<ul>
