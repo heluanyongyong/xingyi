@@ -23,10 +23,24 @@
 								<dd>
 									<p><em>账号：</em><span>星移盒子</span></p>
 									<p><em>实名认证：</em><span></span></p>
+									<div class="member clearfix">
+										<p class="fl mid">
+											<img src="/personal_img/member.png" class="mid"><em>VIP</em><em>10</em>
+										</p>
+										<!-- <el-progress :percentage="30" color="rgba(255,204,0,1)"  style="width: 200px;float: right; font-size: 12px"></el-progress> -->
+										<progress value="20" max="100">
+											你的浏览器不支持progress标签
+										</progress>
+                                        <p class="oranges member_value">
+                                        	<i>0</i>
+                                        	<i>/10000</i>
+                                        </p>
+									</div>
 								</dd>
 							    <dd>
 							    	<p><em>手机号码：</em><span></span></p>
-									<p><em>星币：</em><span>0</span><span class="oranges ml20"><nuxt-link to="/on_recharge/" tag="span">充值</nuxt-link></span></p>
+									<p><em>星币：</em><span>0</span></p>
+									<p class="oranges"><nuxt-link to="/on_recharge/" tag="span">充值</nuxt-link></p>
 							    </dd>
 							</dl>
 							<div class="listNone">
@@ -128,7 +142,7 @@
 					<!-- 修改密码 -->
 					<li class="tc list2 none">
 						<p class="font28 black mb49">星移盒子</p>
-						<form class="tr w462" method="post" name="myform" v-on:submit.prevent="onSubmit">
+						<form class="tr w462" method="post" name="myform" action="">
 							<p><span>原密码</span><input type="password" name="primitive"  placeholder="请输入原密码"></p>
 							<p><span>新密码</span><input type="password" name="password" placeholder="8-16位数字或者是字母加数字"></p>
 							<p><span>确认密码</span><input type="password" name="notarize" placeholder="请与新密码保持一致"></p>
@@ -214,7 +228,7 @@ export default {
       show:false,
       // 新号码更改
       fShow:false,
-      // 跟换头像
+      // 更换头像
       imgFalse:false
     }
   },
@@ -226,36 +240,60 @@ export default {
 		ifshow(){
            this.show=false
            this.fShow=true
-		},
-		onSubmit(){
-			var myform=document.myform;
-			var primi=myform.primitive
-			var password=myform.password;
-			var notarize=myform.notarize;
-			var error=document.getElementById("caution")
-			var pswReg=/^[a-zA-Z0-9]{8,16}$/;
-            if (!pswReg.test(password.value)) {
-				error.innerHTML="密码请输入8-16位数字或者是字母加数字";
-				return false;
-			}
-			else if (notarize.value!==password.value) {
-		   	    error.innerText="确认密码与新密码不一致";
-		   	    return false
-			}else{
-                primi.value=""
-                password.value=""
-                notarize.value=""
-                error.style.display="none"
-			}
-		},
-		useImg(){
-
 		}
     }
 }
 </script>
-
 <style scoped>
+.member{
+	/*width: 275px;*/
+	padding: 5px;
+	background-color: #FFE3D4;
+	border-radius:3px;
+	position: relative
+}
+.member>p:first-child{
+	height:18px;
+	line-height: 18px;
+	padding: 0 5px;
+	background:rgba(186,152,127,1);
+	border-radius:3px;
+	margin: 0 10px 0 0;
+}
+.member em{
+	font-size: 12px;
+	color: white;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+progress{
+	background-color: white;
+	height: 10px;
+	float: left;
+	margin-top: 4px;
+	border-radius: 4px;
+	color: #FFCC00; /*IE10背景色*/
+}
+progress::-webkit-progress-bar{
+	background-color: white;
+	border-radius: 4px;
+}
+progress::-webkit-progress-value{
+	background-color: #FFCC00;
+	border-radius: 4px;
+}
+progress::-moz-progress-bar { 
+    background-color: #FFCC00;
+}
+progress::-webkit-progress-inner-element { 
+	border-radius: 4px; 
+}
+.member_value{
+	position: absolute;
+	right: 8px;
+    top: -13px;
+}
+
 span{
 	cursor: pointer;
 }
@@ -437,7 +475,7 @@ dd{
 	margin-right: 45px;
 }
 dd p{
-	margin-top: 30px;
+	margin-top: 15px;
 }
 em{
 	font-size: 18px;

@@ -109,6 +109,7 @@
 	.el-input__inner,.el-button{
 		width: 400px;
 		height: 50px;
+    outline: none;
 	}
 	.el-button--primary{
 		background-color: rgba(253,143,36,1);

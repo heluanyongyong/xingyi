@@ -9,8 +9,9 @@
 						 | 
 						<nuxt-link to="/login/register">注册</nuxt-link>
 					</li>
-					<li v-if="account=='true'">
+					<li v-if="account=='true'" style="position: relative">
 						<img class="img1" src="/games_center/pic1.png" alt="" @click="$router.push('/personal_center')">
+						<img src="/games_center/vip.png" style="position: absolute;bottom: 4px;left: 10px;width: 16%">
 						<span><nuxt-link to="/personal_center">星移盒子</nuxt-link></span>
 					</li>
 					<li v-if="account=='true'">
