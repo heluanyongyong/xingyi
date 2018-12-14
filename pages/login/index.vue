@@ -10,8 +10,8 @@
     			<div class="login_center">
     				<!-- 密码登录 -->
     				<div class="login_top_content active">
-    					<input class="input_text" type="text" placeholder="帐号">
-    					<input class="input_text" type="text" placeholder="密码" v-model="password">
+    					<input v-model="account" class="input_text" type="text" placeholder="帐号">
+    					<input v-model="password" class="input_text" type="password" placeholder="密码">
     				</div>
     				<!-- 短信登录 -->
     				<div class="login_top_content">
@@ -20,8 +20,8 @@
     					<button class="middle_button">获取验证码</button>
     				</div>
     				<!-- 登录验证信息 -->
-    				<div class="login_info hide">
-    					密码不正确
+    				<div class="login_info">
+    					{{info}}
     				</div>
     				<!-- 登录按钮 -->
     				<div class="login_button">
@@ -127,7 +127,9 @@ export default{
 	},
 	data(){
 		return{
-			password:''
+			account:'',//账号
+			password:'',//密码
+			info:'',//登陆验证信息
 		}
 	},
 	methods:{
@@ -142,11 +144,30 @@ export default{
 			$('input').val('');
 		},
 		login_checked(){
-			if(this.password==''){
-				$('.login_info').removeClass('hide');
+			if(this.account==''){
+				this.info='您还未输入账号';
+			}else if(this.password==''){
+				this.info='您还未输入密码';
 			}else{
-				sessionStorage.setItem('account',"true");
-				this.$router.push('/download_center');
+				this.$axios.post('http://192.168.108.24:4546/game/xyLogin',{
+					phone:this.account,
+				    pwd:this.$md5(this.password),
+				    requestType:"xyGameRequest"
+				}).then((res)=>{
+					if(res.data.code!=200){
+						this.info=res.data.msg;
+						$('.login_info').css('color','#FF4747');
+					}else{
+						this.info='登陆成功，2秒后进入游戏中心';
+						$('.login_info').css('color','green');
+						sessionStorage.setItem('account',"true");
+						setTimeout(()=>{
+							this.$router.push('/games_center/one_game');
+						},2000);
+					}
+				}).catch((err)=>{
+					console.log(err);
+				});
 			}
 		}
 	}
