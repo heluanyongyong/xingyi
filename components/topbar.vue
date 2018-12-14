@@ -1,6 +1,5 @@
 <template>
 	<div>
-<<<<<<< HEAD
 		<el-row>
 			<el-col class="top1" :xs="0" :lg="24">
 				<el-row class="container">
@@ -122,79 +121,6 @@
     	<el-row>
     		<el-col class="_top2" :xs="24" :lg="24"></el-col>
     	</el-row>
-=======
-		<div class="top1">
-			<div class="container">
-				<div class="top1_left">星移网络科技有限公司</div>
-				<ul class="top1_right">
-					<li v-if="account!='true'">
-						<nuxt-link to="/login">登录</nuxt-link>
-						 | 
-						<nuxt-link to="/login/phone_bind">注册</nuxt-link>
-					</li>
-					<li v-if="account=='true'">
-					<li v-if="account=='true'" style="position: relative">
-						<img class="img1" :src="imgUrl" alt="" @click="$router.push('/personal_center')">
-						<img src="/games_center/vip.png" style="position: absolute;bottom: 4px;left: 10px;width: 16%">
-						<span><nuxt-link to="/personal_center">星移盒子</nuxt-link></span>
-					</li>
-					<li v-if="account=='true'">
-						<img src="/games_center/message.png" alt="" @click="$router.push('/message')">
-						<span><nuxt-link to="/message">消息</nuxt-link></span>
-					</li>
-					<li v-if="account=='true'">
-						<img src="/games_center/tuichu.png" alt="" @click="logout">
-						<span><a @click="logout">退出</a></span>
-					</li>
-					<li>
-						<div class="pos_div">
-							<input type="text" placeholder="请输入内容" @keydown="start_search">
-							<img src="/games_center/search.png" alt="" class="inner_img" @click="$router.push('/grabble')">
-						</div>
-					</li>
-				</ul>
-			</div>
-    	</div>
-    	<div class="_top1"></div>
-    	<div class="top2">
-			<div class="container">
-				<img class="navimg" src="/games_center/logo.png" alt="" @click="click_logo">
-				<div class="game_list">
-					<ul>
-						<li>
-							<div class="top"><nuxt-link @click.native="change_list(0)" to="/games_center/one_game">游戏中心</nuxt-link></div>
-							<div class="bottom"><nuxt-link @click.native="change_list(0)" to="/games_center/one_game">游戏中心</nuxt-link></div>
-						</li>
-						<li>
-							<div class="top"><nuxt-link @click.native="change_list(1)" to="/download_center">下载中心</nuxt-link></div>
-							<div class="bottom"><nuxt-link @click.native="change_list(1)" to="/download_center">下载中心</nuxt-link></div>
-						</li>
-						<li>
-							<div class="top"><nuxt-link @click.native="change_list(2)" to="/on_recharge">在线充值</nuxt-link></div>
-							<div class="bottom"><nuxt-link @click.native="change_list(2)" to="/on_recharge">在线充值</nuxt-link></div>
-						</li>
-						<li>
-							<div class="top"><nuxt-link @click.native="change_list(3)" to="/about_xingyi">关于星移</nuxt-link></div>
-							<div class="bottom"><nuxt-link @click.native="change_list(3)" to="/about_xingyi">关于星移</nuxt-link></div>
-						</li>
-						<li>
-							<div class="top"><nuxt-link @click.native="change_list(4)" to="/business_work">商务合作</nuxt-link></div>
-							<div class="bottom"><nuxt-link @click.native="change_list(4)" to="/business_work">商务合作</nuxt-link></div>
-						</li>
-						<li>
-							<div class="top"><nuxt-link @click.native="change_list(5)" to="/contact_us">联系我们</nuxt-link></div>
-							<div class="bottom"><nuxt-link @click.native="change_list(5)" to="/contact_us">联系我们</nuxt-link></div>
-						</li>
-						<li>
-							<div class="top"><nuxt-link @click.native="change_list(6)" to="/join_us">加入星移</nuxt-link></div>
-							<div class="bottom"><nuxt-link @click.native="change_list(6)" to="/join_us">加入星移</nuxt-link></div>
-						</li>
-					</ul>
-				</div>
-			</div>
-    	</div>
-    	<div class="_top2"></div>
->>>>>>> 1f48e2d23ae65f7142d93fe87b2635f92dfdb4c1
 	</div>
 </template>
 <style scoped lang="stylus">
@@ -320,8 +246,7 @@ top2_h=65px
 <script>
 export default{
 	mounted(){
-		// 判断是否登陆
-		this.isSession();
+		this.account=sessionStorage.getItem('account');
 		// 当前路由不触发样式
 		var routes=['games_center','download_center','on_recharge','about_xingyi','business_work','contact_us','join_us'];
 		routes.forEach((data,index)=>{
@@ -331,21 +256,10 @@ export default{
 	},
 	data(){
 		return{
-			account:'',
-			userData:[],//用户数据、来源于缓存
-			imgUrl:'/games_center/pic1.png',//个人中心---头像
+			account:''
 		}
 	},
 	methods:{
-		isSession(){
-			if(sessionStorage.getItem('account')){
-				this.account=sessionStorage.getItem('account');
-				// 缓存获取用户数据
-				this.userData=JSON.parse(sessionStorage.getItem('userData'));
-				// 更改个人中心用户头像信息
-				this.imgUrl=this.userData.gameUser.headimgurl;
-			}
-		},
 		click_logo(){
 			this.$router.push('/download_center');
 		},
@@ -355,22 +269,15 @@ export default{
 			}
 		},
 		logout(){
-			// this.$axios.post('http://192.168.108.24:4546/user/logOut',{
-			// 	"ID":this.userData.gameUser.ID.toString(),
-			//     "sign":this.userData.gameUser.sign,
-			//     "requestType":"xyGameRequest"
+			sessionStorage.setItem('account',"");
+			this.$router.push('/download_center');
+			// this.$axios.post('/http://192.168.108.24:4546/user/logOut',{
+
 			// }).then((res)=>{
-			// 	console.log(res.data);
-			// 	sessionStorage.setItem('account',"");
-			// 	sessionStorage.setItem('userData',"");
-			// 	this.$router.push('/download_center');
-			// 	window.location.reload();
+
 			// }).catch((err)=>{
 			// 	console.log(err);
 			// });
-			sessionStorage.setItem('account',"");
-			sessionStorage.setItem('userData',"");
-			this.isSession();
 			window.location.reload();
 		},
 		change_list(index){
