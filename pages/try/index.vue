@@ -1,12 +1,14 @@
 <template>
 	<div class="header">
-		<el-row :gutter="10">
+		<!-- <h1>hahahah </h1> -->
+		<el-row :gutter="10" class="hidden-xs-only">
 			<!-- xs移动端 -->
 			<!-- lg PC端 -->
-		  <el-col :xs="8" :lg="10" :md="10"><div class="grid-content bg-purple">1</div></el-col>
+		  <!-- <el-col :xs="8" :lg="10" :md="10"><div class="grid-content bg-purple">1</div></el-col>
 		  <el-col :xs="0" :lg="2" :md="2"><div class="grid-content bg-purple-light hidden-xs-only">2</div></el-col>
 		  <el-col :xs="12" :lg="2" :md="2"><div class="grid-content bg-purple1">3</div></el-col>
-		  <el-col :xs="4" :lg="10" :md="10"><div class="grid-content bg-purple-light1">4</div></el-col>
+		  <el-col :xs="4" :lg="10" :md="10"><div class="grid-content bg-purple-light1">4</div></el-col> -->
+		  <h1>hahahah </h1>
 		</el-row>
 	</div>
 </template>
