@@ -160,7 +160,12 @@ export default{
 					}else{
 						this.info='登陆成功，2秒后进入游戏中心';
 						$('.login_info').css('color','green');
+						// 状态栏是否显示
 						sessionStorage.setItem('account',"true");
+						// 记录登陆账户信息
+						var obj=res.data.data;
+						var str=JSON.stringify(obj);
+						sessionStorage.setItem('userData',str);
 						setTimeout(()=>{
 							this.$router.push('/games_center/one_game');
 						},2000);
