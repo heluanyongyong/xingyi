@@ -220,7 +220,6 @@ export default {
 			title:'个人中心'
 		}
 	},
-<<<<<<< HEAD
 	mounted(){
 		// 缓存获取用户数据
 		this.userData=JSON.parse(sessionStorage.getItem('userData'));
@@ -244,20 +243,6 @@ export default {
 			imgFalse:false
 		}
 	},
-=======
-  data () {
-    return {
-      // 实名认证
-      isShow: false,
-      // 旧号码更改
-      show:false,
-      // 新号码更改
-      fShow:false,
-      // 更换头像
-      imgFalse:false
-    }
-  },
->>>>>>> 72f41b545450efaae7e1ecddb7cebf1a7d7a9763
     methods:{
 		listChange(index){
 	      $('.ul_left>li').eq(index).addClass('active').siblings().removeClass('active');
