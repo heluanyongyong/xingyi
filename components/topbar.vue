@@ -10,7 +10,7 @@
 						<nuxt-link to="/login/phone_bind">注册</nuxt-link>
 					</li>
 					<li v-if="account=='true'">
-						<img class="img1" src="/games_center/pic1.png" alt="" @click="$router.push('/personal_center')">
+						<img class="img1" :src="imgUrl" alt="" @click="$router.push('/personal_center')">
 						<span><nuxt-link to="/personal_center">星移盒子</nuxt-link></span>
 					</li>
 					<li v-if="account=='true'">
@@ -195,6 +195,10 @@ top2_h=65px
 export default{
 	mounted(){
 		this.account=sessionStorage.getItem('account');
+		// 缓存获取用户数据
+		this.userData=JSON.parse(sessionStorage.getItem('userData'));
+		// 更改个人中心用户头像信息
+		this.imgUrl=this.userData.gameUser.headimgurl;
 		// 当前路由不触发样式
 		var routes=['games_center','download_center','on_recharge','about_xingyi','business_work','contact_us','join_us'];
 		routes.forEach((data,index)=>{
@@ -204,7 +208,9 @@ export default{
 	},
 	data(){
 		return{
-			account:''
+			account:'',
+			userData:[],//用户数据、来源于缓存
+			imgUrl:'/games_center/pic1.png',//个人中心---头像
 		}
 	},
 	methods:{

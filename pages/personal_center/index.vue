@@ -17,12 +17,16 @@
 						<div>
 							<dl class="clearfix">
 								<dd class="use-img" @click="imgFalse=!imgFalse">
-									<img src="/personal_img/header.png" class="w100">
+									<img :src="imgUrl" class="w100">
 									<span class="change_img">更换头像</span>
 								</dd>
 								<dd>
-									<p><em>账号：</em><span>星移盒子</span></p>
-									<p><em>实名认证：</em><span></span></p>
+									<p><em>账号：</em><span>{{userData.hello}}</span></p>
+									<p>
+										<em>实名认证：</em>
+										<span>已认证</span>
+										<span>未认证</span>
+									</p>
 								</dd>
 							    <dd>
 							    	<p><em>手机号码：</em><span></span></p>
@@ -200,24 +204,35 @@
 
 <script>
 export default {
-  name: 'personal',
-  head(){
+  	name: 'personal',
+  	head(){
 		return{
 			title:'个人中心'
 		}
 	},
-  data () {
-    return {
-      // 实名认证
-      isShow: false,
-      // 旧号码更改
-      show:false,
-      // 新号码更改
-      fShow:false,
-      // 跟换头像
-      imgFalse:false
-    }
-  },
+	mounted(){
+		// 缓存获取用户数据
+		this.userData=JSON.parse(sessionStorage.getItem('userData'));
+		console.log(this.userData);
+		// 获取用户头像
+		this.imgUrl=this.userData.gameUser.headimgurl;
+	},
+	data () {
+		return {
+			//用户缓存信息
+			userData:[],
+			// 用户头像
+			imgUrl:'/personal_img/header.png',
+			// 实名认证
+			isShow: false,
+			// 旧号码更改
+			show:false,
+			// 新号码更改
+			fShow:false,
+			// 跟换头像
+			imgFalse:false
+		}
+	},
     methods:{
 		listChange(index){
 	      $('.ul_left>li').eq(index).addClass('active').siblings().removeClass('active');
