@@ -21,14 +21,17 @@
 									<span class="change_img">更换头像</span>
 								</dd>
 								<dd>
-									<p><em>账号：</em><span>星移盒子</span></p>
-									<p><em>实名认证：</em><span></span></p>
+									<p>
+										<em>账号：</em>
+										<span>{{userData.userName}}</span>
+									</p>
+									<p><em>实名认证：</em><span>{{userData.isRegister}}</span></p>
 									<div class="member clearfix">
 										<p class="fl mid">
-											<img src="/personal_img/member.png" class="mid"><em>VIP</em><em>10</em>
+											<img src="/personal_img/member.png" class="mid"><em>VIP</em><em>{{userData.vipRank}}</em>
 										</p>
 										<!-- <el-progress :percentage="30" color="rgba(255,204,0,1)"  style="width: 200px;float: right; font-size: 12px"></el-progress> -->
-										<progress value="20" max="100">
+										<progress :value="userData.vipExp" max="10000">
 											你的浏览器不支持progress标签
 										</progress>
                                         <p class="oranges member_value">
@@ -38,8 +41,8 @@
 									</div>
 								</dd>
 							    <dd>
-							    	<p><em>手机号码：</em><span></span></p>
-									<p><em>星币：</em><span>0</span></p>
+							    	<p><em>手机号码：</em><span>{{userData.phone}}</span></p>
+									<p><em>金元宝：</em><span>{{userData.money}}</span></p>
 									<p class="oranges"><nuxt-link to="/on_recharge/" tag="span">充值</nuxt-link></p>
 							    </dd>
 							</dl>
@@ -53,7 +56,7 @@
 									</li>
 									<li id="fristLi" @click="listChange(1)">防沉迷规则</li>
 								</ul>
-								<ul class="clearfix">
+								<ul class="clearfix" v-show="false">
 									<li><img src="/personal_img/phone.png"></li>
 									<li>
 										<p class="font22">安全手机</p>
@@ -76,12 +79,12 @@
 							<dl class="clearfix">
 								<dd><img src="/personal_img/header.png"></dd>
 								<dd>
-									<p><em>账号：</em><span>星移盒子</span></p>
-									<p><em>真实姓名：</em><span>星移盒子</span></p>
+									<p><em>账号：</em><span>{{userData.userName}}</span></p>
+									<p><em>真实姓名：</em><span>{{userData.loginName}}</span></p>
 								</dd>
 							    <dd>
-							    	<p><em>手机号码：</em><span>星移盒子</span></p>
-									<p><em>身份证号码：</em><span>星移盒子</span></p>
+							    	<p><em>手机号码：</em><span>{{userData.phone}}</span></p>
+									<p><em>身份证号码：</em><span>{{userData.loginId}}</span></p>
 							    </dd>
 							</dl>
 							<div class="listNone">
@@ -116,14 +119,14 @@
 					<!-- 账号问题 -->
 					<li class="list1 none">
 						<dl class="clearfix">
-							<dd><img src="/personal_img/header.png"></dd>
+							<dd><img style="width:138px;height:138px;border-radius:50%;" :src="imgUrl"></dd>
 							<dd>
-								<p><em>账号：</em><span>星移盒子</span></p>
-								<p><em>真实姓名：</em><span>星移盒子</span></p>
+								<p><em>账号：</em><span>{{userData.userName}}</span></p>
+								<p><em>真实姓名：</em><span>{{userData.loginName}}</span></p>
 							</dd>
 						    <dd>
-						    	<p><em>手机号码：</em><span>星移盒子</span></p>
-								<p><em>身份证号码：</em><span>星移盒子</span></p>
+						    	<p><em>手机号码：</em><span>{{userData.phone}}</span></p>
+								<p><em>身份证号码：</em><span>{{userData.loginId}}</span></p>
 						    </dd>
 						</dl>
 						<div>
@@ -142,13 +145,16 @@
 					<!-- 修改密码 -->
 					<li class="tc list2 none">
 						<p class="font28 black mb49">星移盒子</p>
-						<form class="tr w462" method="post" name="myform" action="">
+						<div style="padding:0px 150px 0 180px">
+							<modify></modify>
+						</div>
+						<!-- <form class="tr w462" method="post" name="myform" action="">
 							<p><span>原密码</span><input type="password" name="primitive"  placeholder="请输入原密码"></p>
 							<p><span>新密码</span><input type="password" name="password" placeholder="8-16位数字或者是字母加数字"></p>
 							<p><span>确认密码</span><input type="password" name="notarize" placeholder="请与新密码保持一致"></p>
 							<p id="caution"></p>
 							<p class="mt45"><input type="submit" name="sub" value="确认" class="bgOrange white"></p>
-						</form>
+						</form> -->
 					</li>
 				</ul>
 			</div>
@@ -159,8 +165,9 @@
         	<div class="useImg_box tc">
         		<p class="tr" @click="imgFalse=!imgFalse"><img src="/personal_img/down.png"></p>
         		<p class="font22 grey tl">更换头像</p>
-        		<span class="useImg_big"><img src="/personal_img/use_img.png"  class="w100"></span>
-        		<p><a href="javascript:"  class="oranges">上传头像</a></p>
+        		<span class="useImg_big"><img src="/personal_img/use_img.png"  class="w100 uploadImg"></span>
+        		<input @change="change_file_img" id="uploadImg" type="file" style="display:none;">
+        		<p><a href="javascript:"  class="oranges" @click="uploadImg">上传头像</a></p>
         		<p>
         			<span class="cancel" @click="imgFalse=!imgFalse">取消</span>
         			<span class="confirm white bgOrange" @click="imgFalse=!imgFalse">确定</span>
@@ -213,6 +220,7 @@
 </template>
 
 <script>
+import modify from '../../components/password/modify.vue'
 export default {
   	name: 'personal',
   	head(){
@@ -220,17 +228,41 @@ export default {
 			title:'个人中心'
 		}
 	},
+	components:{
+		modify
+	},
 	mounted(){
-		// 缓存获取用户数据
-		this.userData=JSON.parse(sessionStorage.getItem('userData'));
-		console.log(this.userData);
-		// 获取用户头像
-		this.imgUrl=this.userData.gameUser.headimgurl;
+		if(sessionStorage.getItem('userData')){
+			// 缓存获取用户数据
+			var session=JSON.parse(sessionStorage.getItem('userData'));
+			// 缓存数据-->用户信息
+			this.userData={
+				userName:session.gameUser.gameName,
+				phone:session.gameUser.phone,//手机号码
+				isRegister:session.gameUser.IDCard.length>5?'已认证':'未认证',//实名认证
+				money:session.gameUser.currency_1.num,//金元宝
+				vipRank:session.vip.vipGrade,//vip等级
+				vipExp:session.vip.vipExp,//vip成长值
+				loginName:session.gameUser.bindName,//真实姓名
+				loginId:session.gameUser.IDCard//身份证号码
+			}
+			// 获取用户头像
+			this.imgUrl=session.gameUser.headimgurl;
+		}
 	},
 	data () {
 		return {
-			//用户缓存信息
-			userData:[],
+			//用户信息
+			userData:{
+				userName:'',//账号名称
+				phone:'',//手机号码
+				isRegister:'未认证',//实名认证
+				money:0,//金元宝
+				vipRank:0,//vip等级
+				vipExp:0,//vip成长值
+				loginName:'',//真实姓名
+				loginId:''//身份证号码
+			},
 			// 用户头像
 			imgUrl:'/personal_img/header.png',
 			// 实名认证
@@ -251,7 +283,23 @@ export default {
 		ifshow(){
            this.show=false
            this.fShow=true
-		}
+		},
+		// 上传图像
+		uploadImg(){
+			$('#uploadImg').click();
+		},
+		// 文件选择完毕、触发事件、改变所选图片
+		change_file_img(){
+			var preview=document.querySelectorAll(`.uploadImg`)[0];
+			var file=document.getElementById('uploadImg').files[0];
+			var reader=new FileReader();
+			reader.onloadend=()=>{
+                preview.src=reader.result;
+            }
+            if(file){
+                reader.readAsDataURL(file);
+            }
+		},
     }
 }
 </script>
@@ -463,7 +511,7 @@ p{
 	width: 510px;
 }
 .list2{
-	height: 764px;
+	/*height: 764px;*/
 }
 .mb49{
 	margin-bottom: 49px;

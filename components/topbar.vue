@@ -21,7 +21,7 @@
 					</li>
 					<li v-if="account=='true'">
 						<img src="/games_center/tuichu.png" alt="" @click="logout">
-						<span><nuxt-link @click.native="logout" to="/download_center">退出</nuxt-link></span>
+						<span><a @click="logout">退出</a></span>
 					</li>
 					<li>
 						<div class="pos_div">
@@ -196,11 +196,8 @@ top2_h=65px
 <script>
 export default{
 	mounted(){
-		this.account=sessionStorage.getItem('account');
-		// 缓存获取用户数据
-		this.userData=JSON.parse(sessionStorage.getItem('userData'));
-		// 更改个人中心用户头像信息
-		this.imgUrl=this.userData.gameUser.headimgurl;
+		// 判断是否登陆
+		this.isSession();
 		// 当前路由不触发样式
 		var routes=['games_center','download_center','on_recharge','about_xingyi','business_work','contact_us','join_us'];
 		routes.forEach((data,index)=>{
@@ -216,6 +213,15 @@ export default{
 		}
 	},
 	methods:{
+		isSession(){
+			if(sessionStorage.getItem('account')){
+				this.account=sessionStorage.getItem('account');
+				// 缓存获取用户数据
+				this.userData=JSON.parse(sessionStorage.getItem('userData'));
+				// 更改个人中心用户头像信息
+				this.imgUrl=this.userData.gameUser.headimgurl;
+			}
+		},
 		click_logo(){
 			this.$router.push('/download_center');
 		},
@@ -225,15 +231,22 @@ export default{
 			}
 		},
 		logout(){
-			sessionStorage.setItem('account',"");
-			this.$router.push('/download_center');
-			// this.$axios.post('/http://192.168.108.24:4546/user/logOut',{
-
+			// this.$axios.post('http://192.168.108.24:4546/user/logOut',{
+			// 	"ID":this.userData.gameUser.ID.toString(),
+			//     "sign":this.userData.gameUser.sign,
+			//     "requestType":"xyGameRequest"
 			// }).then((res)=>{
-
+			// 	console.log(res.data);
+			// 	sessionStorage.setItem('account',"");
+			// 	sessionStorage.setItem('userData',"");
+			// 	this.$router.push('/download_center');
+			// 	window.location.reload();
 			// }).catch((err)=>{
 			// 	console.log(err);
 			// });
+			sessionStorage.setItem('account',"");
+			sessionStorage.setItem('userData',"");
+			this.isSession();
 			window.location.reload();
 		},
 		change_list(index){
