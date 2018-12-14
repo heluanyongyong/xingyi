@@ -14,7 +14,7 @@ export default{
 	head:{
 		title:'营业执照',
 		link: [
-	      { rel: 'shortcut icon', type: 'image/x-icon', href: 'favicon.ico' }
+	    	{ rel: 'shortcut icon', type: 'image/x-icon', href: 'favicon.ico' }
 	    ]
 	}
 }

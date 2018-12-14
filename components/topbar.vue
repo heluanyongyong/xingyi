@@ -10,7 +10,9 @@
 						<nuxt-link to="/login/phone_bind">注册</nuxt-link>
 					</li>
 					<li v-if="account=='true'">
+					<li v-if="account=='true'" style="position: relative">
 						<img class="img1" :src="imgUrl" alt="" @click="$router.push('/personal_center')">
+						<img src="/games_center/vip.png" style="position: absolute;bottom: 4px;left: 10px;width: 16%">
 						<span><nuxt-link to="/personal_center">星移盒子</nuxt-link></span>
 					</li>
 					<li v-if="account=='true'">

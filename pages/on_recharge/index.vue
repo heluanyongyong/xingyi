@@ -431,7 +431,7 @@ export default {
 			$(".imgA").attr("src","/recharge_img/phone.png")
 		}
   	},
-  	// 金元宝充值到游戏-立即充值
+  	// 点击立即充值
   	nowRecharge(name){
   	   var name=$(""+name);
        if (name.text()=="请选择游戏") {

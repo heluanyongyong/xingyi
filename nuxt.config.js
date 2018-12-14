@@ -76,6 +76,9 @@ module.exports = {
     },
     {
       src:'swiper/dist/css/swiper.css'
+    },
+    {
+      src:'element-ui/lib/theme-chalk/display.css'
     }
   ]
 }
