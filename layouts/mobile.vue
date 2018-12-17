@@ -9,13 +9,13 @@
 			<no-ssr>
 				<div class="navHeader">
 					<swiper :options="swiperOption" class="nav">
-						<swiper-slide class="navItem">游戏中心</swiper-slide>
-						<swiper-slide class="navItem">下载中心</swiper-slide>
-						<swiper-slide class="navItem">在线充值</swiper-slide>
-						<swiper-slide class="navItem">关于星移</swiper-slide>
-						<swiper-slide class="navItem">商务合作</swiper-slide>
-						<swiper-slide class="navItem">联系我们</swiper-slide>
-						<swiper-slide class="navItem">加入星移</swiper-slide>
+						<swiper-slide class="navItem"><nuxt-link to="/mobile/game_center">游戏中心</nuxt-link></swiper-slide>
+						<swiper-slide class="navItem"><nuxt-link to="/mobile/game_center">下载中心</nuxt-link></swiper-slide>
+						<swiper-slide class="navItem"><nuxt-link to="/mobile/game_center">在线充值</nuxt-link></swiper-slide>
+						<swiper-slide class="navItem"><nuxt-link to="/mobile/game_center">关于星移</nuxt-link></swiper-slide>
+						<swiper-slide class="navItem"><nuxt-link to="/mobile/game_center">商务合作</nuxt-link></swiper-slide>
+						<swiper-slide class="navItem"><nuxt-link to="/mobile/game_center">联系我们</nuxt-link></swiper-slide>
+						<swiper-slide class="navItem"><nuxt-link to="/mobile/game_center">加入星移</nuxt-link></swiper-slide>
 					</swiper>
 					<img src="/mobile/game_center/list.png" alt="">
 				</div>
@@ -23,21 +23,31 @@
 		</header>
 		<nuxt/>
 		<footer>
-			<ul>
+			<ul class="navUl">
 				<li>游戏中心</li>
-				<li></li>
+				<li class="limit">|</li>
 				<li>下载中心</li>
-				<li></li>
+				<li class="limit">|</li>
 				<li>在线充值</li>
-				<li></li>
+				<li class="limit">|</li>
 				<li>关于星移</li>
-				<li></li>
+				<li class="limit">|</li>
 				<li>商务合作</li>
-				<li></li>
+				<li class="limit">|</li>
 				<li>联系我们</li>
-				<li></li>
+				<li class="limit">|</li>
 				<li>加入星移</li>
 			</ul>
+			<ul>
+				<li>营业执照</li>
+				<li class="limit">|</li>
+				<li>网络文化经营许可证</li>
+				<li class="limit">|</li>
+				<li>计算机软件著作权登记证书</li>
+				<li class="limit">|</li>
+				<li>增值电信业务经营许可证</li>
+			</ul>
+			<p>Copyright © 2017 p9yi.xyz   All rights reserved. 粤ICP备17045789号</p>
 		</footer>
 	</div>
 </template>
@@ -121,6 +131,19 @@ header
 			z-index 100
 			width 5%
 footer
+	padding 3% 4%
 	background #111315
 	color #888888
+	width 100%
+	font(24px)
+	text-align center
+	ul
+		li
+			margin 0 auto
+			display inline-block
+			&.limit
+				margin 0 0.2%
+		&.navUl
+			font(27px)
+			margin-bottom 0.5%
 </style>
