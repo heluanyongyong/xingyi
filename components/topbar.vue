@@ -193,17 +193,19 @@ top2_h=65px
 	background rgba(255,255,255,1)
 	border-top 1px solid #e1e1e1
 	.navimg
+		float left
 		margin-left 6px
 		cursor pointer
-		width 120px
 		margin-top 12px
+		width 120px
 	.game_list
 		float right
 		height top2_h
-		width 80%
+		@media (max-width 1200px)
+			float left
 		ul
 			height top2_h
-			float right
+			float left
 			li
 				display inline-block
 				margin 0 30px
